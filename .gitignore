@@ -1,0 +1,11 @@
+node_modules/
+client/dist/
+data/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+.env
+tests/e2e/shots/
+tests/e2e/report/
+*.log
+.DS_Store

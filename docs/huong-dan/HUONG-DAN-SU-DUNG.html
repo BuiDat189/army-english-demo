@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>Hướng dẫn ARMY ENGLISH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap">
+<style>
+/* Bố cục: sổ tay hướng dẫn — mục lục dính bên trái, cột nội dung ~780px; mỗi vai trò một màu nhận diện */
+:root {
+  --bg: #f4f5f7; --surface: #ffffff; --surface-2: #f8f9fb; --line: #e4e7ec; --line-strong: #d0d5dd;
+  --ink: #101828; --ink-2: #344054; --ink-3: #5d6878;
+  --navy: #15233d; --navy-2: #0c1628; --on-navy: #e8edf5; --on-navy-2: #9fb0cb; --gold: #e3b341;
+  --brand: #1f7a40; --brand-soft: #e8f4ec; --mark: #e11d48; --mark-soft: #fde8ec;
+  --warn-bg: #fff7e6; --warn-line: #f3d69b; --warn-ink: #7a4b00;
+  --r-quanly: #15233d; --r-tuvan: #2f5fd0; --r-giaovu: #1f7a40; --r-giaovien: #6d4bd1; --r-thungan: #a8650c; --r-vanhanh: #0f7a7a; --r-ts: #b4235f;
+  --r-quanly-bg: #e7ebf3; --r-tuvan-bg: #e9effc; --r-giaovu-bg: #e8f4ec; --r-giaovien-bg: #f0ebfc; --r-thungan-bg: #fbf0e0; --r-vanhanh-bg: #e3f4f4; --r-ts-bg: #fce8f0;
+  --shadow: 0 1px 2px rgb(16 24 40 / .06), 0 8px 24px -12px rgb(16 24 40 / .18);
+  --font: "Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0b0f17; --surface: #121826; --surface-2: #161d2d; --line: #232c3d; --line-strong: #303a4e;
+  --ink: #e6e9ef; --ink-2: #b6becc; --ink-3: #8a94a6;
+  --navy: #0d1526; --navy-2: #080e1a; --on-navy: #e6ebf3; --on-navy-2: #93a3bd; --gold: #e3b341;
+  --brand: #4fb174; --brand-soft: #14281c; --mark: #fb5b7a; --mark-soft: #3a1520;
+  --warn-bg: #2a2010; --warn-line: #5a4419; --warn-ink: #f0c56a;
+  --r-quanly: #9db3dc; --r-tuvan: #8fb0f5; --r-giaovu: #6fcb92; --r-giaovien: #b8a0f5; --r-thungan: #e7b26a; --r-vanhanh: #62cccc; --r-ts: #f08ab3;
+  --r-quanly-bg: #18223a; --r-tuvan-bg: #16223f; --r-giaovu-bg: #14281c; --r-giaovien-bg: #231b3d; --r-thungan-bg: #2d2112; --r-vanhanh-bg: #102b2b; --r-ts-bg: #34152a;
+  --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px -12px rgb(0 0 0 / .6);
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #0b0f17; --surface: #121826; --surface-2: #161d2d; --line: #232c3d; --line-strong: #303a4e;
+  --ink: #e6e9ef; --ink-2: #b6becc; --ink-3: #8a94a6;
+  --navy: #0d1526; --navy-2: #080e1a; --on-navy: #e6ebf3; --on-navy-2: #93a3bd; --gold: #e3b341;
+  --brand: #4fb174; --brand-soft: #14281c; --mark: #fb5b7a; --mark-soft: #3a1520;
+  --warn-bg: #2a2010; --warn-line: #5a4419; --warn-ink: #f0c56a;
+  --r-quanly: #9db3dc; --r-tuvan: #8fb0f5; --r-giaovu: #6fcb92; --r-giaovien: #b8a0f5; --r-thungan: #e7b26a; --r-vanhanh: #62cccc; --r-ts: #f08ab3;
+  --r-quanly-bg: #18223a; --r-tuvan-bg: #16223f; --r-giaovu-bg: #14281c; --r-giaovien-bg: #231b3d; --r-thungan-bg: #2d2112; --r-vanhanh-bg: #102b2b; --r-ts-bg: #34152a;
+  --shadow: 0 1px 2px rgb(0 0 0 / .3), 0 8px 24px -12px rgb(0 0 0 / .6);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.65 var(--font); -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+a { color: var(--brand); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 6px; }
+h1, h2, h3, h4 { text-wrap: balance; line-height: 1.25; margin: 0; }
+.tab { font-variant-numeric: tabular-nums; }
+
+/* Đầu trang */
+.hero { background: radial-gradient(circle at 1px 1px, rgb(255 255 255 / .06) 1px, transparent 0) 0 0 / 18px 18px, linear-gradient(160deg, var(--navy), var(--navy-2)); color: var(--on-navy); padding-inline: 16px; }
+.hero-in { max-width: 1180px; margin: 0 auto; padding-block: 40px 36px; display: grid; gap: 14px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.hero h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; color: #fff; }
+.hero p { margin: 0; max-width: 68ch; color: var(--on-navy-2); }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.hero-meta span { font-size: 12.5px; padding: 4px 10px; border-radius: 999px; background: rgb(255 255 255 / .08); border: 1px solid rgb(255 255 255 / .12); color: var(--on-navy); }
+
+/* Khung chính */
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 36px; }
+.toc { position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 32px); overflow-y: auto; font-size: 13.5px; padding-right: 4px; }
+.toc h2 { font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 8px; }
+.toc ol { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 1px; }
+.toc a { display: block; padding: 5px 10px; border-radius: 8px; color: var(--ink-2); text-decoration: none; border-left: 3px solid transparent; }
+.toc a:hover { background: var(--surface); color: var(--ink); }
+.toc a.on { background: var(--surface); color: var(--ink); font-weight: 600; border-left-color: var(--brand); }
+.toc .sub a { padding-left: 22px; font-size: 13px; color: var(--ink-3); }
+.toc .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+main { min-width: 0; max-width: 820px; }
+
+/* Phần lớn */
+.part { margin-top: 56px; }
+.part:first-child { margin-top: 0; }
+.part > h2 { font-size: 26px; font-weight: 800; display: flex; align-items: center; gap: 12px; }
+.part > h2 .no { font-size: 13px; font-weight: 700; color: var(--ink-3); border: 1px solid var(--line-strong); border-radius: 999px; padding: 2px 10px; }
+.lead { color: var(--ink-2); margin: 10px 0 0; max-width: 68ch; }
+p { margin: 10px 0 0; }
+
+/* Thẻ vai trò */
+.roles { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 18px; }
+.rcard { display: grid; gap: 6px; padding: 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); text-decoration: none; color: var(--ink); border-top: 4px solid var(--rc); transition: transform .15s ease, box-shadow .15s ease; }
+.rcard:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.rcard b { font-size: 16px; }
+.rcard .acc { font-size: 12.5px; color: var(--ink-3); }
+.rcard .acc code { color: var(--rc); background: var(--rcbg); }
+.rcard span:last-child { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 999px; color: var(--rc); background: var(--rcbg); white-space: nowrap; }
+.r-quanly { --rc: var(--r-quanly); --rcbg: var(--r-quanly-bg); }
+.r-tuvan { --rc: var(--r-tuvan); --rcbg: var(--r-tuvan-bg); }
+.r-giaovu { --rc: var(--r-giaovu); --rcbg: var(--r-giaovu-bg); }
+.r-giaovien { --rc: var(--r-giaovien); --rcbg: var(--r-giaovien-bg); }
+.r-thungan { --rc: var(--r-thungan); --rcbg: var(--r-thungan-bg); }
+.r-vanhanh { --rc: var(--r-vanhanh); --rcbg: var(--r-vanhanh-bg); }
+.r-ts { --rc: var(--r-ts); --rcbg: var(--r-ts-bg); }
+.dot.r-quanly, .dot.r-tuvan, .dot.r-giaovu, .dot.r-giaovien, .dot.r-thungan, .dot.r-vanhanh, .dot.r-ts { background: var(--rc); }
+
+/* Đầu mục vai trò */
+.rolehead { margin-top: 56px; padding: 22px 22px 18px; border-radius: 16px; background: var(--rcbg); border: 1px solid var(--line); display: grid; gap: 8px; }
+.rolehead h2 { font-size: 24px; font-weight: 800; color: var(--ink); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.rolehead h2 .chip { background: var(--surface); }
+.rolehead p { margin: 0; color: var(--ink-2); max-width: 70ch; }
+.rolehead ul { margin: 4px 0 0; padding-left: 20px; color: var(--ink-2); }
+
+/* Mục chức năng */
+.feat { margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line); }
+.feat h3 { font-size: 19px; font-weight: 700; display: flex; gap: 10px; align-items: baseline; }
+.feat h3 .code { font-size: 12px; font-weight: 700; color: var(--rc, var(--ink-3)); font-variant-numeric: tabular-nums; }
+.where { font-size: 13px; color: var(--ink-3); margin-top: 4px; }
+.where b { color: var(--ink-2); font-weight: 600; }
+.why { margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); }
+.why strong { color: var(--ink); }
+.steps { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; counter-reset: s; }
+.steps li { position: relative; padding-left: 36px; min-height: 26px; }
+.steps li::before { counter-increment: s; content: counter(s); width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 12.5px; font-weight: 700; color: var(--ink-2); background: var(--surface); border: 1px solid var(--line-strong); position: absolute; left: 0; top: 1px; }
+
+.n { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--mark); color: #fff; font-size: 11.5px; font-weight: 700; vertical-align: 1px; margin: 0 2px; }
+ul.plain { margin: 10px 0 0; padding-left: 20px; color: var(--ink-2); display: grid; gap: 4px; }
+figure { margin: 16px 0 0; }
+figure img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); box-shadow: var(--shadow); cursor: zoom-in; background: var(--surface); }
+figure.half img { max-width: 560px; }
+figure.phone { display: flex; gap: 14px; flex-wrap: wrap; }
+figure.phone img { width: 230px; }
+figure.phone figcaption { flex-basis: 100%; }
+figcaption { font-size: 12.5px; color: var(--ink-3); margin-top: 8px; }
+.note { margin-top: 14px; padding: 10px 14px; border-radius: 10px; background: var(--warn-bg); border: 1px solid var(--warn-line); color: var(--warn-ink); font-size: 14px; }
+.tip { margin-top: 14px; padding: 10px 14px; border-radius: 10px; background: var(--brand-soft); color: var(--ink); font-size: 14px; border: 1px solid var(--line); }
+.who { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: .92em; padding: 1px 6px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--line); }
+
+/* Bảng */
+.tbl { overflow-x: auto; margin-top: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); background: var(--surface-2); white-space: nowrap; }
+.mx td:not(:first-child), .mx th:not(:first-child) { text-align: center; white-space: nowrap; }
+.mx td:first-child { font-weight: 600; white-space: nowrap; }
+.full { color: var(--brand); font-weight: 700; }
+.part-of { color: var(--ink-2); }
+.none { color: var(--line-strong); }
+.legend { font-size: 13px; color: var(--ink-3); margin-top: 8px; }
+
+/* Quy trình liên vai trò */
+.flow { margin-top: 16px; display: grid; gap: 0; counter-reset: f; }
+.flow > div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 14px; padding: 10px 0; border-bottom: 1px dashed var(--line); align-items: start; }
+.flow > div:last-child { border-bottom: 0; }
+.flow .chip { justify-self: start; margin-top: 2px; }
+.flow p { margin: 0; color: var(--ink-2); }
+.card { margin-top: 16px; padding: 18px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.card h3 { font-size: 17px; }
+
+dl.faq { margin: 16px 0 0; display: grid; gap: 14px; }
+dl.faq dt { font-weight: 700; }
+dl.faq dd { margin: 4px 0 0; color: var(--ink-2); }
+
+/* Xem ảnh lớn */
+.zoom { position: fixed; inset: 0; z-index: 50; background: rgb(8 12 22 / .86); display: grid; place-items: center; padding: 16px; cursor: zoom-out; }
+.zoom[hidden] { display: none; }
+.zoom img { max-width: min(1400px, 100%); max-height: 100%; border-radius: 10px; box-shadow: 0 20px 60px rgb(0 0 0 / .5); }
+footer { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-3); }
+
+@media (max-width: 960px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); }
+  .toc { position: static; max-height: none; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  .toc .sub { display: none; }
+}
+@media (max-width: 560px) {
+  .flow > div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  figure.phone img { width: calc(50% - 7px); }
+  .rolehead { padding: 18px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .rcard { transition: none; } }
+@media print {
+  @page { size: A4; margin: 14mm 12mm; }
+  :root { --bg: #fff; }
+  body { font-size: 12.5px; background: #fff; }
+  .toc, .zoom { display: none !important; }
+  .wrap { display: block; padding: 0; max-width: none; }
+  main { max-width: none; }
+  .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .rolehead { break-before: page; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .feat { break-inside: auto; }
+  figure, .why, .steps li, .note, .tip, tr, .flow > div, .rcard { break-inside: avoid; }
+  figure img { box-shadow: none; max-height: 125mm; width: auto; max-width: 100%; }
+  .n, .steps li.m::before, .chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="eyebrow">ARMY ENGLISH · Phần mềm quản lý trung tâm</div>
+    <h1>Hướng dẫn sử dụng theo vai trò</h1>
+    <p>Tài liệu đi theo đúng 6 vai trò trong yêu cầu của trung tâm: Tư vấn viên (EC), Trưởng phòng sales, Giáo viên chủ nhiệm (CM), Trưởng phòng học thuật, Giám đốc trung tâm, Hành chính – Kế toán. Mỗi chức năng ghi rõ dùng để làm gì và các bước thao tác; số đỏ trên ảnh ứng với bước cùng số.</p>
+    <div class="hero-meta"><span>Bản trình diễn (demo) – một trung tâm</span><span>6 vai trò + Cơ sở vật chất</span><span>Cập nhật 19/10/2026</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="Mục lục">
+    <h2>Mục lục</h2>
+    <ol>
+      <li><a href="#bat-dau">1. Bắt đầu sử dụng</a></li>
+      <li class="sub"><a href="#truy-cap">Mở link và mã truy cập</a></li>
+      <li class="sub"><a href="#dang-nhap">Đăng nhập</a></li>
+      <li class="sub"><a href="#man-hinh">Làm quen màn hình</a></li>
+      <li class="sub"><a href="#dien-thoai">Dùng trên điện thoại</a></li>
+      <li><a href="#vai-tro">2. Vai trò và quyền</a></li>
+      <li><a href="#ec"><span class="dot r-tuvan"></span>3. Tư vấn viên (EC)</a></li>
+      <li><a href="#ts"><span class="dot r-ts"></span>4. Trưởng phòng sales</a></li>
+      <li><a href="#cm"><span class="dot r-giaovien"></span>5. Giáo viên chủ nhiệm (CM)</a></li>
+      <li><a href="#hk"><span class="dot r-giaovu"></span>6. Trưởng phòng học thuật</a></li>
+      <li><a href="#gd"><span class="dot r-quanly"></span>7. Giám đốc trung tâm</a></li>
+      <li><a href="#kt"><span class="dot r-thungan"></span>8. Hành chính – Kế toán</a></li>
+      <li><a href="#vh"><span class="dot r-vanhanh"></span>9. Cơ sở vật chất</a></li>
+      <li><a href="#quy-trinh">10. Quy trình phối hợp</a></li>
+      <li><a href="#quy-tac">11. Quy định nghiệp vụ</a></li>
+      <li><a href="#hoi-dap">12. Câu hỏi thường gặp</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <!-- ============ 1. BẮT ĐẦU ============ -->
+    <section class="part" id="bat-dau">
+      <h2><span class="no">Phần 1</span>Bắt đầu sử dụng</h2>
+      <p class="lead">Phần mềm chạy trên trình duyệt (Chrome, Edge, Safari, Cốc Cốc), không cần cài đặt. Mọi bộ phận dùng chung một dữ liệu: data khách do EC nhập được CM, Giám đốc và Kế toán dùng tiếp, không ai phải nhập lại.</p>
+
+      <section class="feat" id="truy-cap">
+        <h3>Mở link và nhập mã truy cập</h3>
+        <div class="why"><strong>Dùng để:</strong> bảo vệ bản trình diễn. Chỉ người có mã mới xem được, kể cả khi link bị chuyển tiếp cho người khác.</div>
+        <ol class="steps">
+          <li class="m">Mở link được gửi kèm, gõ <b>mã truy cập</b> vào ô <span class="n">1</span>. Không phân biệt chữ hoa, chữ thường.</li>
+          <li class="m">Bấm <b>Vào bản demo</b> <span class="n">2</span>. Trình duyệt ghi nhớ mã trong 7 ngày.</li>
+        </ol>
+        <figure><img src="img/g01-ma-truy-cap.jpg" alt="Trang nhập mã truy cập" loading="lazy" width="1280" height="800"></figure>
+        <p class="note">Gõ sai mã 8 lần liên tiếp thì phải chờ 10 phút mới thử lại được.</p>
+      </section>
+
+      <section class="feat" id="dang-nhap">
+        <h3>Đăng nhập</h3>
+        <div class="why"><strong>Dùng để:</strong> xác định bạn là ai. Menu, dữ liệu và nút bấm hiện ra theo đúng vai trò.</div>
+        <ol class="steps">
+          <li class="m">Nhập <b>tên đăng nhập</b> <span class="n">1</span> và mật khẩu, bấm <b>Đăng nhập</b> <span class="n">2</span>.</li>
+          <li class="m">Trong bản demo có thể bấm một ô trong khung <b>Tài khoản demo</b> <span class="n">3</span> để vào nhanh theo vai trò.</li>
+        </ol>
+        <figure><img src="img/g02-dang-nhap.jpg" alt="Trang đăng nhập" loading="lazy" width="1280" height="800"></figure>
+        <div class="tbl"><table>
+          <thead><tr><th>Tài khoản</th><th>Người (giả)</th><th>Vai trò</th></tr></thead>
+          <tbody>
+            <tr><td><code>tuvan</code></td><td>Trần Văn Hùng</td><td><span class="chip r-tuvan">Tư vấn viên (EC)</span></td></tr>
+            <tr><td><code>truongsales</code></td><td>Lê Hoàng Nam</td><td><span class="chip r-ts">Trưởng phòng sales</span></td></tr>
+            <tr><td><code>giaovien</code></td><td>Đỗ Thanh Tâm (CM lớp ST1-A, ST2-A)</td><td><span class="chip r-giaovien">Giáo viên chủ nhiệm (CM)</span></td></tr>
+            <tr><td><code>giaovu</code></td><td>Phạm Ngọc Lan (kiêm CM lớp KET-A, PET-A)</td><td><span class="chip r-giaovu">Trưởng phòng học thuật</span></td></tr>
+            <tr><td><code>quanly</code></td><td>Nguyễn Thị Minh Anh</td><td><span class="chip r-quanly">Giám đốc trung tâm</span></td></tr>
+            <tr><td><code>thungan</code></td><td>Bùi Quang Huy</td><td><span class="chip r-thungan">Hành chính – Kế toán</span></td></tr>
+            <tr><td><code>vanhanh</code></td><td>Ngô Văn Long</td><td><span class="chip r-vanhanh">Cơ sở vật chất</span></td></tr>
+            <tr><td><code>phuong</code>, <code>trang</code>, <code>yen</code></td><td>CM khác; Yến là EC kiêm trợ giảng</td><td>Dữ liệu cho báo cáo từng nhân sự</td></tr>
+          </tbody>
+        </table></div>
+        <p class="legend">Mật khẩu chung của tài khoản demo: <code>Army@2026</code>.</p>
+      </section>
+
+      <section class="feat" id="man-hinh">
+        <h3>Làm quen màn hình</h3>
+        <div class="why"><strong>Dùng để:</strong> biết các vùng cố định có trên mọi trang.</div>
+        <ol class="steps">
+          <li class="m"><b>Menu bên trái</b> <span class="n">1</span>: chỉ hiện phân hệ vai trò của bạn được dùng.</li>
+          <li class="m"><b>Tìm kiếm nhanh</b> <span class="n">2</span>: gõ tên học viên, mã lớp… Phím tắt <code>Ctrl</code> + <code>K</code>. Ai không được xem liên hệ phụ huynh thì không tìm được theo SĐT phụ huynh.</li>
+          <li class="m"><b>Đổi nền sáng/tối</b> <span class="n">3</span>.</li>
+          <li class="m"><b>Chuông thông báo</b> <span class="n">4</span>: báo đề xuất mới, việc được giao, khách tới hẹn liên hệ, đề xuất cần duyệt…</li>
+          <li class="m"><b>Menu tài khoản</b> <span class="n">5</span>: xem vai trò, chuyển nhanh tài khoản demo, đăng xuất.</li>
+        </ol>
+        <figure><img src="img/g03-giao-dien-chung.jpg" alt="Các vùng chính của màn hình" loading="lazy" width="1280" height="800"></figure>
+        <figure><img src="img/g06-chuong-thong-bao.jpg" alt="Danh sách thông báo" loading="lazy" width="1280" height="800"><figcaption>Thông báo chỉ hiện trong phần mềm, không gửi SMS/Zalo/email ra ngoài.</figcaption></figure>
+      </section>
+
+      <section class="feat" id="dien-thoai">
+        <h3>Dùng trên điện thoại</h3>
+        <div class="why"><strong>Dùng để:</strong> CM điểm danh, chấm BTVN ngay tại lớp; EC ghi tư vấn khi đang gọi khách.</div>
+        <ol class="steps"><li class="m">Bấm nút menu <span class="n">1</span> ở góc trái để mở danh sách phân hệ. Bảng tự chuyển thành thẻ dễ đọc.</li></ol>
+        <figure class="phone"><img src="img/g07-dien-thoai.jpg" alt="Tổng quan trên điện thoại" loading="lazy"><img src="img/g08-dien-thoai-menu.jpg" alt="Menu trên điện thoại" loading="lazy"><figcaption>Màn hình rộng 390px</figcaption></figure>
+      </section>
+    </section>
+
+    <!-- ============ 2. VAI TRÒ ============ -->
+    <section class="part" id="vai-tro">
+      <h2><span class="no">Phần 2</span>Vai trò và quyền</h2>
+      <p class="lead">Một người có thể kiêm nhiều vai trò; quyền là tổng của các vai trò. Quyền được kiểm tra ở máy chủ cho từng thao tác: gõ thẳng địa chỉ trang không có quyền cũng bị chặn.</p>
+      <div class="roles">
+        <a class="rcard r-tuvan" href="#ec"><b>Tư vấn viên (EC)</b><span class="acc"><code>tuvan</code></span><span>Nhập data khách, phân loại, hẹn check-in / học thử, chuyển học viên và đăng ký. KPI 1 check-in/ngày, 25 data/tháng.</span></a>
+        <a class="rcard r-ts" href="#ts"><b>Trưởng phòng sales</b><span class="acc"><code>truongsales</code></span><span>Làm được việc của EC; xem data của mọi EC, đổi người phụ trách, KPI từng EC, báo cáo sự cố cơ sở vật chất.</span></a>
+        <a class="rcard r-giaovien" href="#cm"><b>Giáo viên chủ nhiệm (CM)</b><span class="acc"><code>giaovien</code></span><span>Lớp mình: điểm danh, BTVN, nhận xét, hướng cải thiện, tiền đóng, ngày hết phí; tái phí; test và họp phụ huynh.</span></a>
+        <a class="rcard r-giaovu" href="#hk"><b>Trưởng phòng học thuật</b><span class="acc"><code>giaovu</code></span><span>Làm được việc của CM; xem mọi lớp/CM; duyệt cấp 1 bảo lưu, chuyển học phí, chuyển lớp, lên level; khai báo nghỉ do trung tâm.</span></a>
+        <a class="rcard r-quanly" href="#gd"><b>Giám đốc trung tâm</b><span class="acc"><code>quanly</code></span><span>Duyệt học phí đăng ký/tái phí, gói phí, duyệt cuối đề xuất; xem mọi nhân sự và báo cáo theo phòng ban.</span></a>
+        <a class="rcard r-thungan" href="#kt"><b>Hành chính – Kế toán</b><span class="acc"><code>thungan</code></span><span>Thu tiền (tiền mặt, chuyển khoản, quẹt thẻ), doanh thu khách mới/tái phí, báo cáo ngày, xác nhận chi.</span></a>
+      </div>
+
+      <div class="tbl"><table class="mx">
+        <thead><tr><th>Chức năng</th><th>EC</th><th>TP sales</th><th>CM</th><th>TP học thuật</th><th>Giám đốc</th><th>Kế toán</th></tr></thead>
+        <tbody>
+          <tr><td>Data khách hàng</td><td class="part-of">Khách của mình</td><td class="full">Mọi EC</td><td class="part-of">Khách của mình</td><td class="full">Xem tất cả</td><td class="full">●</td><td class="none">–</td></tr>
+          <tr><td>Học viên</td><td class="part-of">Không có liên hệ PH</td><td class="part-of">Không có liên hệ PH</td><td class="part-of">Lớp mình</td><td class="full">●</td><td class="full">●</td><td class="full">●</td></tr>
+          <tr><td>Tiền đã đóng, ngày hết phí</td><td class="full">●</td><td class="full">●</td><td class="part-of">Lớp mình</td><td class="full">●</td><td class="full">●</td><td class="full">●</td></tr>
+          <tr><td>Công nợ chi tiết, thu tiền</td><td class="none">–</td><td class="none">–</td><td class="none">–</td><td class="none">–</td><td class="full">●</td><td class="full">●</td></tr>
+          <tr><td>Đăng ký mới / tái phí</td><td class="part-of">Tạo</td><td class="part-of">Tạo</td><td class="part-of">Tạo (tái phí)</td><td class="part-of">Tạo</td><td class="full">Duyệt</td><td class="none">–</td></tr>
+          <tr><td>Bảo lưu, chuyển lớp, lên level, chuyển học phí</td><td class="part-of">Đề nghị</td><td class="part-of">Đề nghị</td><td class="part-of">Đề nghị</td><td class="full">Duyệt cấp 1</td><td class="full">Duyệt cuối</td><td class="none">–</td></tr>
+          <tr><td>Điểm danh, BTVN, nhận xét</td><td class="none">–</td><td class="none">–</td><td class="part-of">Lớp mình</td><td class="full">Mọi lớp</td><td class="full">●</td><td class="none">–</td></tr>
+          <tr><td>Test & họp phụ huynh</td><td class="none">–</td><td class="none">–</td><td class="part-of">Lớp mình</td><td class="full">●</td><td class="full">●</td><td class="none">–</td></tr>
+          <tr><td>Nghỉ do trung tâm</td><td class="none">–</td><td class="none">–</td><td class="none">Xem</td><td class="full">Khai báo</td><td class="full">●</td><td class="none">Xem</td></tr>
+          <tr><td>Báo sự cố cơ sở vật chất</td><td class="full">●</td><td class="full">● + báo cáo</td><td class="full">●</td><td class="full">●</td><td class="full">●</td><td class="full">●</td></tr>
+          <tr><td>Báo cáo</td><td class="part-of">Tuyển sinh</td><td class="part-of">KPI từng EC, sự cố</td><td class="none">–</td><td class="part-of">KPI từng CM, học tập</td><td class="full">Tất cả, theo phòng ban</td><td class="part-of">Báo cáo ngày, học phí</td></tr>
+        </tbody>
+      </table></div>
+      <p class="legend">● dùng đầy đủ · – không thấy chức năng này. Ma trận chi tiết từng quyền ở trang <b>Tài khoản & phân quyền</b>.</p>
+    </section>
+
+    <!-- ============ 3. EC ============ -->
+    <section class="r-tuvan" id="ec">
+      <div class="rolehead">
+        <h2><span class="chip">Vai trò 1</span>Tư vấn viên (EC)</h2>
+        <p>Người tìm và chăm sóc khách tiềm năng đến khi khách đăng ký học. Mỗi khách đi qua các phân loại: <b>Tiềm năng tháng → Đang lên hẹn → Đăng ký check-in → Đã check-in → Đăng ký học thử → Đã học thử</b> (hoặc <b>Chăm sóc thêm</b>) → Đã đăng ký.</p>
+        <ul><li>Mỗi sáng: xem <b>Khu vực của tôi</b>, gọi lại khách tới hẹn.</li><li>KPI: tối thiểu <b>1 khách check-in mỗi ngày</b> và <b>25 data tiềm năng mỗi tháng</b>.</li></ul>
+      </div>
+
+      <section class="feat" id="ec-khu-vuc">
+        <h3><span class="code">EC-1</span>Khu vực của tôi: KPI và đề xuất cần xử lý</h3>
+        <p class="where">Menu <b>Tổng quan</b> → khung <b>Khu vực của tôi</b></p>
+        <div class="why"><strong>Dùng để:</strong> biết ngay hôm nay mình đã đạt KPI chưa và còn việc gì. Màu nền đổi theo mức đạt: <b>xanh</b> ≥ 100%, <b>vàng</b> 60–99%, <b>đỏ</b> dưới 60%.</div>
+        <ol class="steps">
+          <li class="m"><b>Thẻ KPI</b> <span class="n">1</span>: “Check-in hôm nay” (mục tiêu 1 khách) và “Data tiềm năng tháng này” (mục tiêu 25 data).</li>
+          <li class="m"><b>Đề xuất cần xử lý</b> <span class="n">2</span>: việc được giao cho bạn, quá hạn tô đỏ. Bấm để mở đúng hồ sơ.</li>
+          <li class="m">Các ô <b>số khách theo phân loại</b> <span class="n">3</span>: bấm để mở danh sách đã lọc. Dòng chữ đỏ bên dưới là số khách tới/trễ hẹn liên hệ lại.</li>
+        </ol>
+        <figure><img src="img/ec01-khu-vuc.jpg" alt="Khu vực của tôi của EC" loading="lazy" width="1280" height="800"></figure>
+      </section>
+
+      <section class="feat" id="ec-data">
+        <h3><span class="code">EC-2</span>Nhập data khách hàng</h3>
+        <p class="where">Menu <b>Data khách hàng</b></p>
+        <div class="why"><strong>Dùng để:</strong> lưu mọi khách tiềm năng với nguồn khách và ngày liên hệ lại. Hệ thống nhắc khi tới hẹn, nên không bỏ sót khách.</div>
+        <ol class="steps">
+          <li class="m">Bấm <b>Nhập data khách</b> <span class="n">1</span>. Các tab <span class="n">2</span> lọc theo phân loại; dải <b>Phễu</b> <span class="n">3</span> lọc theo cấp độ; ô <b>Lịch hẹn</b> <span class="n">4</span> lọc khách liên hệ lại hôm nay, trễ hẹn, trong tuần, hoặc data nhập tháng này.</li>
+        </ol>
+        <figure><img src="img/ec02-data-khach.jpg" alt="Danh sách data khách" loading="lazy" width="1280" height="800"></figure>
+        <ol class="steps">
+          <li>Điền tên phụ huynh, số điện thoại, tên học viên. Nếu số điện thoại đã có trong hệ thống, phần mềm cảnh báo ngay; nếu khách đó <b>đã check-in với nhân sự khác</b> thì không tạo được hồ sơ mới.</li>
+          <li class="m">Chọn <b>nguồn khách</b> <span class="n">1</span>: Khách hàng giới thiệu, Vãng lai, Fanpage, Thị trường, Telesales, Kênh online, Sự kiện, Đối tác.</li>
+          <li class="m">Chọn <b>phân loại</b> <span class="n">2</span> (Tiềm năng tháng, Đang lên hẹn hoặc Chăm sóc thêm) và <b>ngày liên hệ lại</b> <span class="n">3</span> — bắt buộc. Bấm <b>Tạo hồ sơ</b>.</li>
+        </ol>
+        <figure class="half"><img src="img/ec03-nhap-data.jpg" alt="Form nhập data khách" loading="lazy"></figure>
+      </section>
+
+      <section class="feat" id="ec-ho-so">
+        <h3><span class="code">EC-3</span>Hồ sơ khách: ghi tư vấn và đổi phân loại</h3>
+        <p class="where">Bấm vào một khách trong <b>Data khách hàng</b></p>
+        <div class="why"><strong>Dùng để:</strong> lưu lại từng lần gọi/nhắn/gặp, cập nhật phân loại và hẹn ngày liên hệ tiếp. Toàn bộ lịch sử xem được ở cột bên phải.</div>
+        <ol class="steps">
+          <li class="m"><b>Ghi tư vấn / phân loại</b> <span class="n">1</span>: ghi nội dung cuộc gọi, kết quả.</li>
+          <li class="m"><b>Đăng ký check-in</b> <span class="n">2</span>, <b>Khách đã check-in</b> <span class="n">3</span>, <b>Đăng ký học thử</b> <span class="n">4</span>, <b>Chuyển thành học viên</b> <span class="n">5</span>: các bước tiếp theo, xem EC-4 đến EC-6.</li>
+        </ol>
+        <figure><img src="img/ec04-ho-so-khach.jpg" alt="Hồ sơ khách" loading="lazy" width="1280" height="800"></figure>
+        <ol class="steps">
+          <li class="m">Trong hộp ghi tư vấn, chọn <b>phân loại</b> mới nếu cần <span class="n">1</span> và <b>ngày liên hệ lại</b> <span class="n">2</span> (bắt buộc). Bấm <b>Lưu</b>.</li>
+        </ol>
+        <figure class="half"><img src="img/ec05-ghi-tu-van.jpg" alt="Ghi tư vấn" loading="lazy"></figure>
+      </section>
+
+      <section class="feat" id="ec-checkin">
+        <h3><span class="code">EC-4</span>Đăng ký check-in và ghi nhận khách check-in</h3>
+        <div class="why"><strong>Dùng để:</strong> hẹn ngày khách lên trung tâm. Khi đăng ký, <b>tất cả CM</b> nhận việc “Đón khách check-in” trong mục Đề xuất cần xử lý. Khi khách đến, bấm <b>Khách đã check-in</b>: hệ thống ghi thời điểm và <b>khóa khách cho nhân sự check-in trước</b> để tránh tranh chấp.</div>
+        <ol class="steps">
+          <li class="m">Bấm <b>Đăng ký check-in</b>, chọn <b>ngày giờ</b> <span class="n">1</span>, ghi chú cho CM nếu có, bấm <b>Đăng ký</b> <span class="n">2</span>.</li>
+          <li>Khi khách tới, mở hồ sơ, bấm <b>Khách đã check-in</b> → <b>Xác nhận check-in</b>. Việc “đón khách” của CM tự hoàn tất.</li>
+        </ol>
+        <figure class="half"><img src="img/ec06-dang-ky-checkin.jpg" alt="Đăng ký check-in" loading="lazy"></figure>
+        <figure><img src="img/ec07-da-checkin.jpg" alt="Khách đã check-in" loading="lazy" width="1280" height="800"><figcaption>Khách đã check-in: <span class="n">1</span> thông báo khách thuộc về nhân sự check-in trước. Chỉ Trưởng phòng hoặc Giám đốc đổi được người phụ trách.</figcaption></figure>
+      </section>
+
+      <section class="feat" id="ec-hoc-thu">
+        <h3><span class="code">EC-5</span>Đăng ký học thử</h3>
+        <div class="why"><strong>Dùng để:</strong> cho khách học thử trong một buổi của lớp phù hợp. Việc “Học thử” được chuyển tới <b>CM của lớp đó</b>; sau buổi học, giáo viên ghi kết quả và khách chuyển sang <b>Đã học thử</b> (không đến thì chuyển <b>Chăm sóc thêm</b>).</div>
+        <ol class="steps">
+          <li class="m">Chọn <b>lớp</b> <span class="n">1</span> (lớp đúng khóa quan tâm được đánh dấu) và <b>buổi học</b> <span class="n">2</span>. Có thể chọn “Lịch riêng” cho kiểm tra đầu vào. Bấm <b>Đặt lịch</b>.</li>
+        </ol>
+        <figure class="half"><img src="img/ec08-dang-ky-hoc-thu.jpg" alt="Đăng ký học thử" loading="lazy"></figure>
+      </section>
+
+      <section class="feat" id="ec-chuyen">
+        <h3><span class="code">EC-6</span>Chuyển thành học viên và đăng ký khóa</h3>
+        <div class="why"><strong>Dùng để:</strong> tạo hồ sơ học viên, phụ huynh và đăng ký khóa từ thông tin đã có — không nhập lại. Học phí đăng ký mới <b>phải được Giám đốc duyệt</b>; trong lúc chờ, kế toán chưa thu học phí (khách đặt cọc thì ghi bằng Nạp tiền). Doanh số ghi cho EC tạo đăng ký.</div>
+        <ol class="steps">
+          <li>Kiểm tra thông tin học viên, phụ huynh đã điền sẵn.</li>
+          <li class="m">Đọc lưu ý duyệt học phí <span class="n">1</span>, chọn <b>gói phí</b> <span class="n">2</span> (3 tháng, 6 tháng, 1 năm 96 buổi…) và lịch thanh toán. Bấm <b>Tạo học viên & đăng ký khóa</b>.</li>
+        </ol>
+        <figure class="half"><img src="img/ec09-chuyen-hoc-vien.jpg" alt="Chuyển thành học viên" loading="lazy"></figure>
+      </section>
+
+      <section class="feat" id="ec-hoc-vien">
+        <h3><span class="code">EC-7</span>Xem danh sách học viên và đề nghị giảm phí</h3>
+        <p class="where">Menu <b>Học viên – Phụ huynh</b></p>
+        <div class="why"><strong>Dùng để:</strong> xem lịch trung tâm và danh sách học sinh (tên, lớp, lịch học), <b>số tiền đã đóng</b> <span class="n">1</span>, <b>ngày hết phí</b> và số ngày còn lại <span class="n">2</span> để chủ động tư vấn. Theo quy định, EC <b>không xem thông tin liên hệ phụ huynh</b> của học viên đang học.</div>
+        <figure><img src="img/ec10-hoc-vien.jpg" alt="Danh sách học viên của EC" loading="lazy" width="1280" height="800"></figure>
+        <ol class="steps">
+          <li class="m">Đề nghị giảm phí: mở hồ sơ học viên → tab <b>Khóa/lớp học</b> → nút ba chấm của đăng ký → <b>Đề nghị giảm học phí</b> <span class="n">1</span>. Giám đốc duyệt xong công nợ mới giảm.</li>
+        </ol>
+        <figure><img src="img/ec11-de-nghi-giam.jpg" alt="Đề nghị giảm học phí" loading="lazy" width="1280" height="800"></figure>
+      </section>
+    </section>
+
+    <!-- ============ 4. TP SALES ============ -->
+    <section class="r-ts" id="ts">
+      <div class="rolehead">
+        <h2><span class="chip">Vai trò 2</span>Trưởng phòng sales</h2>
+        <p>Có toàn bộ khu vực cá nhân như EC (EC-1 đến EC-7), cộng thêm quyền xem cả phòng.</p>
+      </div>
+      <section class="feat" id="ts-data">
+        <h3><span class="code">TS-1</span>Data của toàn phòng và đổi người phụ trách</h3>
+        <div class="why"><strong>Dùng để:</strong> xem data của mọi EC, lọc theo <b>người phụ trách</b> <span class="n">1</span>, xem ai đang giữ khách và khách đã check-in lúc nào <span class="n">2</span>. Khi cần chia lại khách (EC nghỉ việc…), mở hồ sơ → Sửa thông tin → đổi <b>Nhân sự phụ trách</b>.</div>
+        <figure><img src="img/ts01-data-toan-phong.jpg" alt="Data toàn phòng" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="ts-kpi">
+        <h3><span class="code">TS-2</span>Báo cáo KPI từng tư vấn viên</h3>
+        <p class="where">Menu <b>Báo cáo</b> → tab <b>KPI từng tư vấn viên (EC)</b> <span class="n">1</span></p>
+        <div class="why"><strong>Dùng để:</strong> so sánh từng EC trong kỳ: <b>check-in</b> <span class="n">2</span> so với mục tiêu (1 khách × số ngày làm việc), <b>data mới</b> <span class="n">3</span> so với 25/tháng, khách đang tư vấn, khách tới hạn liên hệ, đăng ký mới, doanh thu. Ô KPI tô màu theo mức đạt. Xuất CSV được.</div>
+        <figure><img src="img/ts02-kpi-ec.jpg" alt="KPI từng EC" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="ts-su-co">
+        <h3><span class="code">TS-3</span>Báo cáo sự cố cơ sở vật chất</h3>
+        <p class="where">Menu <b>Báo cáo</b> → tab <b>Sự cố cơ sở vật chất</b> <span class="n">1</span></p>
+        <div class="why"><strong>Dùng để:</strong> theo dõi sự cố theo phòng: ai báo, đề xuất xử lý trước ngày nào, đã xử lý chưa; sự cố quá hạn đề xuất được cảnh báo.</div>
+        <figure><img src="img/ts03-su-co.jpg" alt="Báo cáo sự cố" loading="lazy" width="1280" height="800"></figure>
+      </section>
+    </section>
+
+    <!-- ============ 5. CM ============ -->
+    <section class="r-giaovien" id="cm">
+      <div class="rolehead">
+        <h2><span class="chip">Vai trò 3</span>Giáo viên chủ nhiệm (CM)</h2>
+        <p>Phụ trách lớp chủ nhiệm: học tập, chuyên cần, học phí còn lại và <b>đẩy tái phí</b>. CM cũng nhận khách check-in/học thử do EC chuyển sang và tự nhập data khách của mình.</p>
+        <ul><li>KPI mỗi ngày: <b>điểm danh đủ các buổi đã dạy</b> và <b>chấm BTVN cho học viên có mặt</b>.</li><li>Mỗi tháng: đặt lịch test và họp phụ huynh cho từng lớp; trả kết quả test trong 5 ngày.</li></ul>
+      </div>
+      <section class="feat" id="cm-khu-vuc">
+        <h3><span class="code">CM-1</span>Khu vực của tôi</h3>
+        <p class="where">Menu <b>Tổng quan</b></p>
+        <ol class="steps">
+          <li class="m"><b>KPI hôm nay</b> <span class="n">1</span>: điểm danh và chấm BTVN; đỏ nếu chưa làm.</li>
+          <li class="m"><b>Ô cảnh báo</b> <span class="n">2</span>: học viên lớp tôi, học viên dưới 90% chuyên cần hoặc BTVN, tới hạn tái phí, trễ trả kết quả test. Bấm để mở danh sách.</li>
+          <li class="m"><b>Đề xuất cần xử lý</b> <span class="n">3</span>: đón khách check-in, khách học thử ở lớp mình, xếp lại lớp khi hết bảo lưu, trả kết quả test…</li>
+        </ol>
+        <figure><img src="img/cm01-khu-vuc.jpg" alt="Khu vực của CM" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="cm-lop">
+        <h3><span class="code">CM-2</span>Danh sách học viên lớp chủ nhiệm</h3>
+        <p class="where">Menu <b>Lớp & Khóa học</b> → chọn lớp</p>
+        <div class="why"><strong>Dùng để:</strong> nắm từng học viên: buổi đã tính / còn lại, số buổi nghỉ miễn phí đã dùng, tỷ lệ chuyên cần và hoàn thành BTVN, <b>số tiền đã đóng và ngày đóng</b>, <b>ngày dự kiến hết phí</b>. Học viên dưới 90% được liệt kê ở khung đỏ <span class="n">1</span>.</div>
+        <ol class="steps">
+          <li class="m">Cột <b>Đã đóng · ngày đóng</b> <span class="n">2</span> và <b>Dự kiến hết phí</b> <span class="n">3</span>: học viên sắp hết phí tô cam, có nút <b>Nhập tái phí</b>.</li>
+        </ol>
+        <figure><img src="img/cm02-lop.jpg" alt="Học viên lớp chủ nhiệm" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="cm-diem-danh">
+        <h3><span class="code">CM-3</span>Điểm danh, BTVN, nhận xét và hướng cải thiện</h3>
+        <p class="where">Menu <b>Điểm danh – Đào tạo</b> → <b>Điểm danh</b>, hoặc bấm buổi học trên Lịch học</p>
+        <ol class="steps">
+          <li class="m">Chọn trạng thái từng học viên <span class="n">1</span>: có mặt, đi muộn, vắng có phép, vắng không phép. Nút “Chưa chọn → Có mặt” điền nhanh.</li>
+          <li class="m">Chấm <b>BTVN</b> <span class="n">2</span> (hoàn thành / chưa đủ / không làm), điểm, nhận xét trên lớp.</li>
+          <li class="m">Ghi <b>hướng cải thiện</b> <span class="n">3</span> cho từng học viên. Bấm <b>Lưu điểm danh</b>.</li>
+        </ol>
+        <figure class="half"><img src="img/cm03-diem-danh.jpg" alt="Điểm danh" loading="lazy"></figure>
+        <p class="note">Nghỉ có phép hay không phép đều tính là nghỉ. Gói 96 buổi có 4 buổi nghỉ không tính phí; vượt quá thì trừ buổi.</p>
+        <ol class="steps">
+          <li class="m">Phòng học có sự cố? Kéo xuống cuối hộp điểm danh, bấm <b>Báo sự cố phòng học</b> <span class="n">1</span>.</li>
+          <li class="m">Chọn tài sản trong phòng hoặc để trống nếu là sự cố phát sinh mới <span class="n">1</span>, nhập mô tả và <b>ngày đề xuất xử lý</b> <span class="n">2</span>. Bộ phận cơ sở vật chất và Giám đốc nhận thông báo.</li>
+        </ol>
+        <figure class="half"><img src="img/cm04a-nut-bao-su-co.jpg" alt="Nút báo sự cố" loading="lazy"></figure>
+        <figure class="half"><img src="img/cm04-bao-su-co.jpg" alt="Báo sự cố phòng học" loading="lazy"></figure>
+      </section>
+      <section class="feat" id="cm-tai-phi">
+        <h3><span class="code">CM-4</span>Nhập tái phí</h3>
+        <div class="why"><strong>Dùng để:</strong> CM là người trực tiếp đẩy tái phí. Khi học viên sắp hết phí, mở hồ sơ → tab Khóa/lớp học → <b>Tái đăng ký</b>. Chọn gói tái phí <span class="n">2</span>. Học phí tái phí cũng <b>chờ Giám đốc duyệt</b> <span class="n">1</span>; doanh số tái phí ghi cho CM.</div>
+        <figure class="half"><img src="img/cm05-tai-phi.jpg" alt="Nhập tái phí" loading="lazy"></figure>
+      </section>
+      <section class="feat" id="cm-de-nghi">
+        <h3><span class="code">CM-5</span>Đề nghị bảo lưu, chuyển lớp, lên level</h3>
+        <div class="why"><strong>Dùng để:</strong> gửi đề nghị theo quy trình 2 cấp: <b>Trưởng phòng học thuật duyệt trước, Giám đốc duyệt cuối</b>. Chỉ khi Giám đốc duyệt, thay đổi mới có hiệu lực.</div>
+        <ol class="steps">
+          <li class="m">Hồ sơ học viên → tab Khóa/lớp học → nút ba chấm của đăng ký → chọn <b>Đề nghị bảo lưu</b> <span class="n">1</span>, <b>chuyển lớp</b> <span class="n">2</span> hoặc <b>lên level mới</b> <span class="n">3</span>.</li>
+        </ol>
+        <figure><img src="img/cm06-menu-de-nghi.jpg" alt="Menu đề nghị" loading="lazy" width="1280" height="800"></figure>
+        <ol class="steps">
+          <li class="m">Bảo lưu: chọn <b>từ ngày</b> <span class="n">1</span> và <b>đến ngày</b> <span class="n">2</span>. Gói 1 năm (96 buổi) được bảo lưu <b>1 lần</b>, tối thiểu 2 tuần, tối đa 3 tháng; hệ thống chặn nếu sai.</li>
+        </ol>
+        <figure class="half"><img src="img/cm07-de-nghi-bao-luu.jpg" alt="Đề nghị bảo lưu" loading="lazy"></figure>
+      </section>
+      <section class="feat" id="cm-test">
+        <h3><span class="code">CM-6</span>Lịch test và họp phụ huynh</h3>
+        <p class="where">Menu <b>Test – Họp PH – Lịch nghỉ</b></p>
+        <div class="why"><strong>Dùng để:</strong> đặt lịch kiểm tra định kỳ và họp phụ huynh hằng tháng. Phần mềm cảnh báo lớp chưa đủ lịch trong tháng. Sau ngày test, <b>trả kết quả cho phụ huynh trong 5 ngày</b> <span class="n">2</span>; quá hạn thì hệ thống tạo việc nhắc CM.</div>
+        <ol class="steps">
+          <li class="m">Bấm <b>Đặt lịch test / họp PH</b> <span class="n">1</span>, chọn loại, lớp, ngày giờ.</li>
+          <li>Sau buổi test: nút ba chấm → <b>Đánh dấu đã tổ chức</b>, rồi <b>Đã trả kết quả cho phụ huynh</b>.</li>
+        </ol>
+        <figure><img src="img/cm08-test-hop-ph.jpg" alt="Lịch test và họp PH" loading="lazy" width="1280" height="800"></figure>
+        <figure class="half"><img src="img/cm09-dat-lich-test.jpg" alt="Đặt lịch test" loading="lazy"></figure>
+      </section>
+      <section class="feat" id="cm-khac">
+        <h3><span class="code">CM-7</span>Data khách của CM, giờ dạy, xin nghỉ</h3>
+        <ul class="plain">
+          <li><b>Data khách hàng</b>: CM nhập và chăm sóc khách của mình giống EC (EC-2 đến EC-6), cùng quy tắc ai check-in trước giữ khách.</li>
+          <li><b>Kết quả học thử</b>: khi có khách học thử ở lớp mình, mở buổi học → <b>Ghi kết quả</b>.</li>
+          <li><b>Lịch làm & giờ dạy</b>: xem giờ dạy thực tế được ghi tự động sau mỗi buổi điểm danh; tạo đơn xin nghỉ.</li>
+        </ul>
+        <figure><img src="img/cm10-gio-day.jpg" alt="Giờ dạy" loading="lazy" width="1280" height="800"></figure>
+        <figure class="half"><img src="img/cm11-don-nghi.jpg" alt="Đơn xin nghỉ" loading="lazy"></figure>
+      </section>
+    </section>
+
+    <!-- ============ 6. TP HỌC THUẬT ============ -->
+    <section class="r-giaovu" id="hk">
+      <div class="rolehead">
+        <h2><span class="chip">Vai trò 4</span>Trưởng phòng học thuật</h2>
+        <p>Có khu vực cá nhân như CM (CM-1 đến CM-7) cho lớp mình chủ nhiệm, cộng thêm quyền quản lý toàn bộ học vụ.</p>
+      </div>
+      <section class="feat" id="hk-duyet">
+        <h3><span class="code">HK-1</span>Duyệt cấp 1: bảo lưu, chuyển học phí, chuyển lớp, lên level</h3>
+        <p class="where">Menu <b>Đề xuất – Phê duyệt</b> → tab <b>Chờ tôi duyệt (cấp 1)</b> <span class="n">1</span></p>
+        <div class="why"><strong>Dùng để:</strong> xét đề nghị của CM/EC trước khi chuyển Giám đốc. Đề xuất đang chờ bạn có nhãn <b>Chờ Trưởng phòng học thuật</b> <span class="n">2</span>.</div>
+        <figure><img src="img/hk01-duyet-cap-1.jpg" alt="Danh sách chờ duyệt cấp 1" loading="lazy" width="1280" height="800"></figure>
+        <ol class="steps">
+          <li class="m">Mở đề xuất, đọc tác động khi duyệt, bấm <b>Duyệt cấp 1 → chuyển Giám đốc</b> <span class="n">1</span>, hoặc <b>Từ chối</b> <span class="n">2</span> (bắt buộc ghi lý do). Đề xuất do chính Trưởng phòng gửi thì chuyển thẳng Giám đốc.</li>
+        </ol>
+        <figure class="half"><img src="img/hk02-chi-tiet-duyet.jpg" alt="Chi tiết đề xuất" loading="lazy"></figure>
+      </section>
+      <section class="feat" id="hk-nghi">
+        <h3><span class="code">HK-2</span>Khai báo nghỉ do trung tâm (không trừ học phí)</h3>
+        <p class="where">Menu <b>Test – Họp PH – Lịch nghỉ</b> → tab <b>Nghỉ do trung tâm</b></p>
+        <div class="why"><strong>Dùng để:</strong> các trường hợp nghỉ từ phía trung tâm như nghỉ Tết sớm, cúp điện. Buổi học trong khoảng nghỉ bị hủy và <b>bù đủ vào cuối khóa</b>, nên học phí của học viên không bị trừ. Giáo viên và CM của lớp nhận thông báo.</div>
+        <ol class="steps">
+          <li class="m">Bấm <b>Khai báo nghỉ</b> <span class="n">1</span>.</li>
+          <li class="m">Chọn từ ngày, đến ngày, nhập <b>lý do</b> <span class="n">1</span>, chọn toàn trung tâm hoặc từng lớp. Phần <b>xem trước</b> <span class="n">2</span> cho biết số buổi bị hủy và ngày buổi bù của từng lớp. Bấm <b>Xác nhận nghỉ & bù buổi</b>.</li>
+        </ol>
+        <figure><img src="img/hk03-nghi-trung-tam.jpg" alt="Danh sách nghỉ do trung tâm" loading="lazy" width="1280" height="800"></figure>
+        <figure class="half"><img src="img/hk04-khai-bao-nghi.jpg" alt="Khai báo nghỉ" loading="lazy"></figure>
+      </section>
+      <section class="feat" id="hk-kpi">
+        <h3><span class="code">HK-3</span>KPI từng CM và gói phí</h3>
+        <ul class="plain">
+          <li><b>Báo cáo → KPI từng chủ nhiệm (CM)</b>: số lớp, học viên, học viên cảnh báo &lt;90%, tỷ lệ điểm danh <span class="n">1</span> và chấm BTVN <span class="n">2</span> (tô màu), số tái phí, doanh thu tái phí, tới hạn tái phí, trễ trả kết quả test.</li>
+        </ul>
+        <figure><img src="img/hk05-kpi-cm.jpg" alt="KPI từng CM" loading="lazy" width="1280" height="800"></figure>
+        <ul class="plain">
+          <li><b>Lớp & Khóa học → Gói phí</b>: <b>Thêm gói phí</b> <span class="n">1</span> với số buổi, giá, số buổi nghỉ miễn phí, số lần bảo lưu <span class="n">2</span>. Gói do trưởng phòng tạo ở trạng thái <b>Chờ GĐ duyệt</b>, chưa bán được cho tới khi Giám đốc duyệt.</li>
+        </ul>
+        <figure><img src="img/hk06-goi-phi.jpg" alt="Gói phí" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="hk-lop">
+        <h3><span class="code">HK-4</span>Lớp học, lịch học, sơ đồ phòng</h3>
+        <ul class="plain">
+          <li><b>Tạo lớp</b> <span class="n">1</span>: chọn khóa, phòng, giáo viên, <b>chủ nhiệm (CM)</b>, lịch tuần; hệ thống tự sinh buổi và kiểm tra trùng phòng/giáo viên.</li>
+          <li>Lịch học xem theo tuần, ngày hoặc <b>theo phòng</b>; bấm ô trống trên lưới phòng để xếp buổi.</li>
+        </ul>
+        <figure><img src="img/hk07-lop-hoc.jpg" alt="Lớp học" loading="lazy" width="1280" height="800"></figure>
+        <figure class="half"><img src="img/hk08-tao-lop.jpg" alt="Tạo lớp" loading="lazy"></figure>
+        <figure><img src="img/hk09-lich-tuan.jpg" alt="Lịch tuần" loading="lazy" width="1280" height="800"></figure>
+        <figure><img src="img/hk10-so-do-phong.jpg" alt="Sơ đồ phòng" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="hk-cham-soc">
+        <h3><span class="code">HK-5</span>Chăm sóc, bổ trợ học tập, duyệt giờ dạy</h3>
+        <ul class="plain">
+          <li><b>Chăm sóc – Tái đăng ký</b>: việc chăm sóc học viên vắng (giao cho CM của lớp), phản hồi phụ huynh, danh sách sắp hết khóa.</li>
+          <li><b>Học tập – Check-in → Bổ trợ</b>: hệ thống gợi ý học viên dưới ngưỡng (chuyên cần, BTVN dưới 90%…), xác nhận để tạo việc bổ trợ.</li>
+          <li><b>Nhân sự – Giờ dạy → Giờ dạy thực tế</b>: duyệt giờ dạy của giáo viên.</li>
+        </ul>
+        <figure><img src="img/hk11-cham-soc.jpg" alt="Chăm sóc" loading="lazy" width="1280" height="800"></figure>
+        <figure><img src="img/hk12-bo-tro.jpg" alt="Bổ trợ học tập" loading="lazy" width="1280" height="800"></figure>
+        <figure><img src="img/hk13-duyet-gio-day.jpg" alt="Duyệt giờ dạy" loading="lazy" width="1280" height="800"></figure>
+      </section>
+    </section>
+
+    <!-- ============ 7. GIÁM ĐỐC ============ -->
+    <section class="r-quanly" id="gd">
+      <div class="rolehead">
+        <h2><span class="chip">Vai trò 5</span>Giám đốc trung tâm</h2>
+        <p>Xem được toàn bộ nhân sự và dữ liệu; người duyệt cuối các khoản liên quan tới học phí.</p>
+        <ul><li>Mỗi ngày: duyệt học phí đăng ký mới/tái phí để kế toán thu được tiền.</li><li>Cuối tháng: xem báo cáo theo phòng ban, KPI từng EC và CM.</li></ul>
+      </div>
+      <section class="feat" id="gd-tong-quan">
+        <h3><span class="code">GĐ-1</span>Tổng quan trung tâm</h3>
+        <ol class="steps">
+          <li class="m">Chọn <b>kỳ</b> <span class="n">1</span>. Bấm <b>thẻ chỉ số</b> <span class="n">2</span> để mở danh sách lọc sẵn; <b>Định nghĩa chỉ số</b> <span class="n">3</span> giải thích cách tính.</li>
+        </ol>
+        <figure><img src="img/gd01-tong-quan.jpg" alt="Tổng quan" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="gd-duyet">
+        <h3><span class="code">GĐ-2</span>Duyệt học phí, gói phí và duyệt cuối</h3>
+        <p class="where">Menu <b>Đề xuất – Phê duyệt</b> → tab <b>Chờ Giám đốc duyệt</b> <span class="n">1</span></p>
+        <div class="why"><strong>Gồm:</strong> học phí đăng ký mới và tái phí <span class="n">2</span>, gói phí mới, giảm phí, hoàn phí, chi phí, nghỉ phép, và đề xuất 2 cấp đã qua Trưởng phòng học thuật <span class="n">3</span>. Giám đốc có thể duyệt thẳng cả đề xuất đang chờ cấp 1.</div>
+        <figure><img src="img/gd02-phe-duyet.jpg" alt="Danh sách chờ Giám đốc duyệt" loading="lazy" width="1280" height="800"></figure>
+        <ol class="steps">
+          <li class="m">Mở đề xuất học phí: đọc phần <b>Khi duyệt</b> <span class="n">1</span> rồi bấm <b>Duyệt</b> <span class="n">2</span>. Đăng ký có hiệu lực (vào lớp đã chọn hoặc chờ xếp lớp), kế toán thu được tiền. Từ chối (ghi lý do) thì đăng ký bị hủy.</li>
+        </ol>
+        <figure class="half"><img src="img/gd03-duyet-hoc-phi.jpg" alt="Duyệt học phí" loading="lazy"></figure>
+        <figure class="half"><img src="img/gd04-duyet-cuoi.jpg" alt="Duyệt cuối" loading="lazy"><figcaption>Đề xuất 2 cấp: dòng <span class="n">1</span> cho biết Trưởng phòng học thuật đã duyệt lúc nào, ghi chú gì.</figcaption></figure>
+      </section>
+      <section class="feat" id="gd-bao-cao">
+        <h3><span class="code">GĐ-3</span>Báo cáo theo phòng ban</h3>
+        <p class="where">Menu <b>Báo cáo</b> → <b>Tổng hợp theo phòng ban</b> <span class="n">1</span></p>
+        <div class="why"><strong>Dùng để:</strong> so sánh phòng Sales (check-in, data, đăng ký mới, doanh thu) và phòng Học thuật (học viên, cảnh báo, tái phí); bảng <b>Xu hướng 6 tháng</b> <span class="n">2</span>. Xuất CSV <span class="n">3</span> mở bằng Excel. Các báo cáo KPI từng EC (TS-2), từng CM (HK-3) và báo cáo ngày (KT-1) Giám đốc cũng xem được.</div>
+        <figure><img src="img/gd05-phong-ban.jpg" alt="Báo cáo theo phòng ban" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="gd-tai-khoan">
+        <h3><span class="code">GĐ-4</span>Nhân sự, tài khoản, khôi phục dữ liệu demo</h3>
+        <ul class="plain">
+          <li><b>Tài khoản & phân quyền</b>: chuyển nhanh sang tài khoản khác để xem góc nhìn từng vai trò <span class="n">1</span>; <b>Reset dữ liệu demo</b> <span class="n">2</span> trước mỗi buổi trình diễn.</li>
+          <li><b>Nhân sự – Giờ dạy</b>: danh sách nhân sự, vai trò, lịch làm việc.</li>
+        </ul>
+        <figure><img src="img/gd06-tai-khoan.jpg" alt="Tài khoản" loading="lazy" width="1280" height="800"></figure>
+        <figure><img src="img/gd07-nhan-su.jpg" alt="Nhân sự" loading="lazy" width="1280" height="800"></figure>
+      </section>
+    </section>
+
+    <!-- ============ 8. KẾ TOÁN ============ -->
+    <section class="r-thungan" id="kt">
+      <div class="rolehead">
+        <h2><span class="chip">Vai trò 6</span>Hành chính – Kế toán</h2>
+        <p>Thu tiền, quản lý doanh thu từng trường hợp đóng phí (tách <b>khách mới</b> và <b>tái phí</b>), thông tin học sinh và phụ huynh, nhận đề xuất và báo cáo từ các phòng.</p>
+      </div>
+      <section class="feat" id="kt-ngay">
+        <h3><span class="code">KT-1</span>Thực thu và báo cáo ngày</h3>
+        <ol class="steps">
+          <li class="m">Trên <b>Tổng quan</b>: <b>Thực thu hôm nay</b> và <b>thực thu tháng</b> (lũy kế) <span class="n">1</span>.</li>
+        </ol>
+        <figure><img src="img/kt01-tong-quan.jpg" alt="Thực thu trên tổng quan" loading="lazy" width="1280" height="800"></figure>
+        <ol class="steps">
+          <li class="m"><b>Báo cáo → Ngày (kế toán)</b> <span class="n">1</span>: mỗi ngày một dòng gồm Số check-in, Số Renew, <b>Số hoàn new</b> <span class="n">2</span>, Số cọc và tiền cọc, Công nợ cuối ngày, Thực thu ngày, <b>Thực thu tháng</b> <span class="n">3</span>. Cuối bảng có ghi chú cách tính từng cột.</li>
+        </ol>
+        <figure><img src="img/kt02-bao-cao-ngay.jpg" alt="Báo cáo ngày" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="kt-thu">
+        <h3><span class="code">KT-2</span>Công nợ và thu tiền (tiền mặt, chuyển khoản, quẹt thẻ)</h3>
+        <ol class="steps">
+          <li class="m"><b>Học phí – Thu chi → Công nợ</b> <span class="n">1</span>: các khoản cần thu; bấm <b>Thu tiền</b> <span class="n">2</span>.</li>
+        </ol>
+        <figure><img src="img/kt03-cong-no.jpg" alt="Công nợ" loading="lazy" width="1280" height="800"></figure>
+        <ol class="steps">
+          <li class="m">Nhập số tiền, ngày thu, chọn phương thức. Khi chọn <b>Quẹt thẻ</b> <span class="n">1</span>, bắt buộc nhập <b>số CCCD chủ thẻ</b> <span class="n">2</span>, <b>ngày cấp thẻ</b> <span class="n">3</span>, <b>đơn vị cấp thẻ</b> <span class="n">4</span>. Bấm <b>Xác nhận thu tiền</b>; bấm hai lần cũng chỉ tạo một phiếu.</li>
+        </ol>
+        <figure class="half"><img src="img/kt04-thu-tien-the.jpg" alt="Thu tiền quẹt thẻ" loading="lazy"></figure>
+        <p class="note">Đăng ký đang <b>Chờ GĐ duyệt học phí</b> thì chưa thu được. Nếu khách đặt cọc, ghi bằng <b>Nạp tiền</b> (KT-4); sau khi duyệt dùng <b>Trừ số dư</b> để đóng học phí.</p>
+      </section>
+      <section class="feat" id="kt-phieu">
+        <h3><span class="code">KT-3</span>Phiếu thu: doanh thu khách mới / tái phí</h3>
+        <ol class="steps">
+          <li class="m">Tab <b>Phiếu thu</b>: dòng tổng hợp <span class="n">1</span> tách tiền khách mới, tái phí và từng phương thức. Cột <b>Nguồn doanh số</b> <span class="n">2</span> cho biết khoản thu thuộc khách mới hay tái phí và ai bán. Lọc riêng bằng ô <span class="n">3</span>.</li>
+          <li>Thu nhầm: nút ba chấm → <b>Hủy phiếu thu</b> (bắt buộc lý do), rồi thu lại. Phiếu hủy vẫn được lưu.</li>
+        </ol>
+        <figure><img src="img/kt05-phieu-thu.jpg" alt="Phiếu thu" loading="lazy" width="1280" height="800"></figure>
+        <figure><img src="img/kt06-in-phieu.jpg" alt="In phiếu thu" loading="lazy" width="1280" height="800"></figure>
+      </section>
+      <section class="feat" id="kt-coc">
+        <h3><span class="code">KT-4</span>Đặt cọc / nạp tiền, hoàn phí và chi tiền</h3>
+        <ul class="plain">
+          <li><b>Nạp tiền</b> (hồ sơ học viên → tab Học phí): ghi tiền đặt cọc hoặc đóng trước; tính vào thực thu ngày nạp. Quẹt thẻ cũng cần CCCD, ngày cấp, đơn vị cấp.</li>
+          <li><b>Đề xuất – Phê duyệt → Đã duyệt – chờ chi</b>: hoàn phí, chi phí đã được duyệt; chỉ khi bấm <b>Xác nhận đã chi</b> tiền mới được ghi nhận là đã ra.</li>
+        </ul>
+        <figure class="half"><img src="img/kt07-nap-coc.jpg" alt="Nạp tiền đặt cọc" loading="lazy"></figure>
+        <figure><img src="img/kt08-cho-chi.jpg" alt="Chờ chi" loading="lazy" width="1280" height="800"></figure>
+      </section>
+    </section>
+
+    <!-- ============ 9. CSVC ============ -->
+    <section class="r-vanhanh" id="vh">
+      <div class="rolehead">
+        <h2><span class="chip">Bổ sung</span>Cơ sở vật chất</h2>
+        <p>Vai trò thêm ngoài file yêu cầu, để có người nhận và xử lý sự cố do CM/EC báo. Không xem học viên, phụ huynh, tài chính.</p>
+      </div>
+      <section class="feat" id="vh-su-co">
+        <h3><span class="code">VH-1</span>Xử lý sự cố và công việc</h3>
+        <ul class="plain">
+          <li><b>Tài sản → Báo hỏng & xử lý</b>: cột <b>Đề xuất xử lý</b> <span class="n">1</span> tô đỏ khi quá ngày người báo đề xuất.</li>
+          <li>Mở sự cố: <b>Tạo công việc xử lý</b>, <b>Tạo đề xuất chi</b> (Giám đốc duyệt, Kế toán chi), <b>Xác nhận đã xử lý</b>.</li>
+          <li><b>Công việc</b>: checklist mở cửa, kiểm tra phòng, đóng cửa hằng ngày.</li>
+        </ul>
+        <figure><img src="img/o04-su-co.jpg" alt="Danh sách sự cố" loading="lazy" width="1280" height="800"></figure>
+        <figure><img src="img/o05-xu-ly-su-co.jpg" alt="Xử lý sự cố" loading="lazy" width="1280" height="800"></figure>
+        <figure><img src="img/o01-cong-viec.jpg" alt="Công việc" loading="lazy" width="1280" height="800"></figure>
+      </section>
+    </section>
+
+    <!-- ============ 10. QUY TRÌNH ============ -->
+    <section class="part" id="quy-trinh">
+      <h2><span class="no">Phần 10</span>Quy trình phối hợp giữa các phòng</h2>
+      <div class="card">
+        <h3>Từ data khách đến học viên đóng phí</h3>
+        <div class="flow">
+          <div><span class="chip r-tuvan">EC</span><p>Nhập data (nguồn, phân loại, ngày liên hệ lại) → ghi tư vấn → <b>Đăng ký check-in</b>.</p></div>
+          <div><span class="chip r-giaovien">Mọi CM</span><p>Nhận việc “Đón khách check-in”.</p></div>
+          <div><span class="chip r-tuvan">EC</span><p>Khách tới → <b>Khách đã check-in</b> (khách thuộc EC này) → <b>Đăng ký học thử</b> vào lớp phù hợp.</p></div>
+          <div><span class="chip r-giaovien">CM của lớp</span><p>Nhận việc học thử, ghi kết quả sau buổi học.</p></div>
+          <div><span class="chip r-tuvan">EC</span><p>Chuyển thành học viên + đăng ký gói phí → học phí chờ duyệt. Khách cọc thì Kế toán ghi Nạp tiền.</p></div>
+          <div><span class="chip r-quanly">Giám đốc</span><p>Duyệt học phí → đăng ký có hiệu lực.</p></div>
+          <div><span class="chip r-thungan">Kế toán</span><p>Thu tiền (tiền mặt / chuyển khoản / quẹt thẻ) → báo cáo ngày cập nhật.</p></div>
+          <div><span class="chip r-giaovu">TP học thuật</span><p>Xếp lớp nếu chưa chọn lớp.</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Tái phí</h3>
+        <div class="flow">
+          <div><span class="chip r-giaovien">CM</span><p>Theo dõi “Dự kiến hết phí” trong lớp → <b>Nhập tái phí</b>.</p></div>
+          <div><span class="chip r-quanly">Giám đốc</span><p>Duyệt học phí tái phí.</p></div>
+          <div><span class="chip r-thungan">Kế toán</span><p>Thu tiền; phiếu thu ghi nguồn “Tái phí”, doanh số cho CM.</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Bảo lưu / chuyển lớp / lên level / chuyển học phí</h3>
+        <div class="flow">
+          <div><span class="chip r-giaovien">CM / EC</span><p>Gửi đề nghị từ hồ sơ học viên.</p></div>
+          <div><span class="chip r-giaovu">TP học thuật</span><p>Duyệt cấp 1 (hoặc từ chối có lý do).</p></div>
+          <div><span class="chip r-quanly">Giám đốc</span><p>Duyệt cuối → thay đổi có hiệu lực. Hết bảo lưu, CM nhận việc xếp lại lớp.</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Sự cố cơ sở vật chất</h3>
+        <div class="flow">
+          <div><span class="chip r-giaovien">CM</span><p>Báo sự cố từ buổi học, kèm ngày đề xuất xử lý.</p></div>
+          <div><span class="chip r-vanhanh">Cơ sở vật chất</span><p>Tạo việc xử lý; nếu tốn tiền thì tạo đề xuất chi.</p></div>
+          <div><span class="chip r-quanly">Giám đốc</span><p>Duyệt chi.</p></div>
+          <div><span class="chip r-thungan">Kế toán</span><p>Xác nhận đã chi. TP sales/Giám đốc theo dõi trên báo cáo sự cố.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 11. QUY TẮC ============ -->
+    <section class="part" id="quy-tac">
+      <h2><span class="no">Phần 11</span>Quy định nghiệp vụ phần mềm đang áp dụng</h2>
+      <p class="lead">Theo file yêu cầu của trung tâm. Các dòng ghi “giả định” cần trung tâm xác nhận.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Chủ đề</th><th>Quy định</th></tr></thead>
+        <tbody>
+          <tr><td><b>Ai giữ khách</b></td><td>Nhân sự ghi nhận khách check-in <b>trước</b> giữ khách. Trùng số điện thoại đã check-in với người khác thì không tạo hồ sơ mới được. Chỉ trưởng phòng/Giám đốc đổi người phụ trách.</td></tr>
+          <tr><td><b>Ngày liên hệ lại</b></td><td>Bắt buộc với mọi khách đang tư vấn; tới hẹn hệ thống thông báo cho người phụ trách.</td></tr>
+          <tr><td><b>Duyệt học phí</b></td><td>Đăng ký mới, tái phí và gói phí mới do Giám đốc duyệt. Chưa duyệt: chưa có công nợ, chưa thu học phí, được nạp cọc.</td></tr>
+          <tr><td><b>Đề xuất 2 cấp</b></td><td>Bảo lưu, chuyển học phí, chuyển lớp, lên level: Trưởng phòng học thuật → Giám đốc. Có hiệu lực khi Giám đốc duyệt.</td></tr>
+          <tr><td><b>Tính buổi</b></td><td>Có mặt, đi muộn, nghỉ có phép, nghỉ không phép đều trừ 1 buổi. Gói 96 buổi có 4 buổi nghỉ không tính phí (giả định: gói 48 buổi 2 buổi, gói 24 buổi 1 buổi). Buổi học bù không trừ thêm.</td></tr>
+          <tr><td><b>Bảo lưu</b></td><td>Gói 1 năm (96 buổi): 1 lần, tối thiểu 2 tuần, tối đa 3 tháng. Gói khác không có quyền bảo lưu (giả định).</td></tr>
+          <tr><td><b>Nghỉ do trung tâm</b></td><td>Buổi bị hủy được bù đủ cuối khóa, không trừ học phí.</td></tr>
+          <tr><td><b>Cảnh báo học tập</b></td><td>Chuyên cần &lt; 90% (từ 4 buổi) hoặc hoàn thành BTVN &lt; 90% (từ 3 buổi chấm).</td></tr>
+          <tr><td><b>Test</b></td><td>Trả kết quả cho phụ huynh trong 5 ngày sau ngày test; quá hạn tạo việc nhắc CM.</td></tr>
+          <tr><td><b>KPI</b></td><td>EC: ≥ 1 check-in/ngày, ≥ 25 data tiềm năng/tháng. CM: điểm danh 100% buổi đã dạy và chấm BTVN 100% học viên có mặt mỗi ngày. Xanh ≥ 100%, vàng 60–99%, đỏ &lt; 60%.</td></tr>
+          <tr><td><b>Báo cáo ngày</b></td><td>Số hoàn new = học viên mới đóng đủ học phí trong ngày; Số cọc = phiếu nạp cọc + lần đóng đầu chưa đủ của học viên mới (giả định). Thực thu = tiền vào thật, không tính phiếu trừ số dư.</td></tr>
+          <tr><td><b>Quẹt thẻ</b></td><td>Bắt buộc số CCCD chủ thẻ (12 số), ngày cấp thẻ, đơn vị cấp thẻ.</td></tr>
+          <tr><td><b>Dữ liệu demo</b></td><td>Toàn bộ là dữ liệu giả: số điện thoại dạng 0000 xxx xxx, email @example.com. Không gửi SMS/Zalo/email, không kết nối ngân hàng.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- ============ 12. HỎI ĐÁP ============ -->
+    <section class="part" id="hoi-dap">
+      <h2><span class="no">Phần 12</span>Câu hỏi thường gặp</h2>
+      <dl class="faq">
+        <dt>Vì sao kế toán không bấm được “Thu tiền” cho học viên vừa đăng ký?</dt>
+        <dd>Đăng ký đang chờ Giám đốc duyệt học phí (<a href="#gd-duyet">GĐ-2</a>). Khách đặt cọc thì ghi bằng Nạp tiền.</dd>
+        <dt>EC khác đã tạo hồ sơ cùng số điện thoại thì sao?</dt>
+        <dd>Hệ thống cảnh báo trùng nhưng vẫn cho tạo. Khách thuộc về người ghi nhận check-in trước; sau đó không ai khác tạo hồ sơ mới cho số đó được.</dd>
+        <dt>Vì sao EC không thấy số điện thoại phụ huynh của học viên đang học?</dt>
+        <dd>Theo quy định của trung tâm, EC chỉ xem thông tin học sinh, lớp, lịch, tiền đã đóng và ngày hết phí.</dd>
+        <dt>Học viên nghỉ có phép có bị trừ buổi không?</dt>
+        <dd>Có, nghỉ có phép hay không phép đều tính là nghỉ; chỉ được miễn trong hạn mức nghỉ không tính phí của gói.</dd>
+        <dt>Trưởng phòng học thuật đã duyệt mà học viên vẫn chưa bảo lưu?</dt>
+        <dd>Còn chờ Giám đốc duyệt cuối. Xem trạng thái “Chờ Giám đốc duyệt cuối” ở đề xuất.</dd>
+        <dt>Dữ liệu tôi thử trong bản demo có mất không?</dt>
+        <dd>Giữ tới khi Giám đốc bấm <b>Reset dữ liệu demo</b>. Nên reset trước mỗi buổi trình diễn để dữ liệu khớp ngày hôm nay.</dd>
+      </dl>
+      <footer>ARMY ENGLISH – Bản trình diễn. Toàn bộ học viên, phụ huynh, nhân sự trong ảnh là dữ liệu giả. Ảnh chụp ngày 19/10/2026.</footer>
+    </section>
+  </main>
+</div>
+
+<div class="zoom" id="zoom" hidden><img alt=""></div>
+<script>
+(function () {
+  // Bấm ảnh để xem lớn; bấm lại hoặc Esc để đóng
+  var z = document.getElementById('zoom'), zi = z.querySelector('img');
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (t.tagName === 'IMG' && t.closest('figure')) { zi.src = t.src; zi.alt = t.alt; z.hidden = false; }
+    else if (t === z || t === zi) z.hidden = true;
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') z.hidden = true; });
+  // Tô sáng mục lục theo phần đang đọc
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var map = {}; links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var id = en.target.id; if (!map[id]) return;
+      links.forEach(function (a) { a.classList.remove('on'); });
+      map[id].classList.add('on');
+    });
+  }, { rootMargin: '-10% 0px -80% 0px' });
+  Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
