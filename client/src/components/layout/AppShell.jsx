@@ -4,7 +4,7 @@ import * as Popover from '@radix-ui/react-popover';
 import * as DM from '@radix-ui/react-dropdown-menu';
 import clsx from 'clsx';
 import {
-  Menu as MenuIcon, PanelLeftClose, PanelLeftOpen, Bell, Search, LogOut, Repeat2, ChevronDown, FlaskConical, UserCog, CheckCheck, X, Sun, Moon, Monitor,
+  Menu as MenuIcon, PanelLeftClose, PanelLeftOpen, Bell, Search, LogOut, Repeat2, ChevronDown, FlaskConical, UserCog, CheckCheck, X, Sun, Moon, Monitor, Sparkles,
 } from 'lucide-react';
 import { useAuth } from '../../lib/auth.jsx';
 import { visibleNav, PAGE_TITLES } from '../../nav.js';
@@ -38,43 +38,49 @@ export default function AppShell() {
   return (
     <div className="min-h-dvh">
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] focus:rounded focus:bg-surface focus:px-3 focus:py-2 focus:shadow">Bỏ qua menu, tới nội dung</a>
-      {/* Sidebar desktop */}
-      <aside className={clsx('side-panel fixed inset-y-0 left-0 z-30 hidden flex-col transition-[width] duration-300 ease-[var(--ease-out-soft)] lg:flex', collapsed ? 'w-[72px]' : 'w-64')} aria-label="Điều hướng chính">
-        <SidebarContent nav={nav} collapsed={collapsed} canHr={can('hr.view')} />
-        <div className="border-t border-white/10 p-2">
-          <button type="button" onClick={toggle} className="flex h-9 w-full items-center gap-3 rounded-md px-3 text-[13px] text-side-ink-2 transition-colors hover:bg-side-hover hover:text-white" aria-label={collapsed ? 'Mở rộng menu' : 'Thu gọn menu'} title={collapsed ? 'Mở rộng menu' : 'Thu gọn menu'}>
+      {/* Floating Bento Sidebar desktop */}
+      <aside className={clsx(
+        'side-panel fixed bottom-3 left-3 top-3 z-30 hidden flex-col overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_50px_-12px_rgb(15_23_42/0.45)] transition-[width] duration-300 ease-[var(--ease-out-soft)] lg:flex',
+        collapsed ? 'w-[74px]' : 'w-[260px]',
+      )} aria-label="Điều hướng chính">
+        <SidebarContent nav={nav} collapsed={collapsed} canHr={can('hr.view')} user={user} />
+        <div className="border-t border-white/10 p-2.5">
+          <button type="button" onClick={toggle} className="flex h-9 w-full items-center gap-3 rounded-xl px-3 text-[13px] font-medium text-side-ink-2 transition-colors hover:bg-side-hover hover:text-white" aria-label={collapsed ? 'Mở rộng menu' : 'Thu gọn menu'} title={collapsed ? 'Mở rộng menu' : 'Thu gọn menu'}>
             {collapsed ? <PanelLeftOpen className="size-[18px] shrink-0" /> : <PanelLeftClose className="size-[18px] shrink-0" />}
-            {!collapsed && 'Thu gọn menu'}
+            {!collapsed && 'Thu gọn thanh bên'}
           </button>
         </div>
       </aside>
       {/* Sidebar điện thoại/tablet */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
-          <div className="absolute inset-0 animate-fade-in bg-[rgb(8_12_22/0.5)] backdrop-blur-[1px]" aria-hidden="true" onClick={() => setMobileOpen(false)} />
-          <aside className="side-panel absolute inset-y-0 left-0 flex w-72 max-w-[85vw] animate-side-in flex-col shadow-[var(--shadow-pop)]">
-            <IconButton icon={X} label="Đóng menu" className="absolute right-2 top-2.5 z-10 text-side-ink hover:bg-side-hover hover:text-white" onClick={() => setMobileOpen(false)} />
-            <SidebarContent nav={nav} collapsed={false} canHr={can('hr.view')} />
+          <div className="absolute inset-0 animate-fade-in bg-[rgb(8_12_22/0.55)] backdrop-blur-xs" aria-hidden="true" onClick={() => setMobileOpen(false)} />
+          <aside className="side-panel absolute inset-y-2 left-2 flex w-72 max-w-[85vw] animate-side-in flex-col overflow-hidden rounded-2xl border border-white/10 shadow-[var(--shadow-pop)]">
+            <IconButton icon={X} label="Đóng menu" className="absolute right-2.5 top-3 z-10 text-side-ink hover:bg-side-hover hover:text-white" onClick={() => setMobileOpen(false)} />
+            <SidebarContent nav={nav} collapsed={false} canHr={can('hr.view')} user={user} />
           </aside>
         </div>
       )}
 
-      <div className={clsx('transition-[padding] duration-300 ease-[var(--ease-out-soft)]', collapsed ? 'lg:pl-[72px]' : 'lg:pl-64')}>
-        <header className="sticky top-0 z-20 border-b border-line bg-surface/80 backdrop-blur-md">
-          <div className="flex h-14 items-center gap-2 px-3 sm:px-5">
+      <div className={clsx('transition-[padding] duration-300 ease-[var(--ease-out-soft)]', collapsed ? 'lg:pl-[92px]' : 'lg:pl-[278px]')}>
+        <div className="sticky top-0 z-20 px-3 pt-3 sm:px-6">
+          <header className="mx-auto flex h-14 max-w-[1440px] items-center gap-2.5 rounded-2xl border border-line/90 bg-surface/85 px-3.5 shadow-[var(--shadow-card)] backdrop-blur-xl sm:px-5">
             <IconButton icon={MenuIcon} label="Mở menu" className="lg:hidden" onClick={() => setMobileOpen(true)} />
-            <p key={title} className="hidden min-w-0 animate-fade-in truncate text-[15px] font-semibold text-ink md:block md:w-48 lg:w-56">{title}</p>
+            <div className="hidden min-w-0 items-center gap-2.5 md:flex md:w-48 lg:w-60">
+              <span className="h-4 w-1 shrink-0 rounded-full bg-gradient-to-b from-brand-400 to-brand-600" aria-hidden />
+              <p key={title} className="animate-fade-in truncate text-[15px] font-bold tracking-tight text-ink">{title}</p>
+            </div>
             <GlobalSearch />
-            <div className="ml-auto flex items-center gap-1">
+            <div className="ml-auto flex items-center gap-1.5">
               <DemoBadge />
               <ThemeMenu />
               <Notifications />
+              <div className="mx-0.5 hidden h-5 w-px bg-line sm:block" aria-hidden />
               <AccountMenu user={user} />
             </div>
-          </div>
-        </header>
-        <main id="main" className="mx-auto w-full max-w-[1440px] px-4 py-5 sm:px-6 sm:py-6">
-          {/* Mỗi lần đổi trang: nội dung trồi nhẹ lên (tắt khi giảm chuyển động) */}
+          </header>
+        </div>
+        <main id="main" className="mx-auto w-full max-w-[1440px] px-3 py-5 sm:px-6 sm:py-6">
           <div key={location.pathname} className="animate-rise">
             <Outlet />
           </div>
@@ -84,25 +90,37 @@ export default function AppShell() {
   );
 }
 
-function SidebarContent({ nav, collapsed, canHr }) {
+function SidebarContent({ nav, collapsed, canHr, user }) {
   return (
     <>
       <div className={clsx('flex h-16 shrink-0 items-center gap-3 border-b border-white/10', collapsed ? 'justify-center px-2' : 'px-4')}>
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#fff] p-1 shadow-[0_4px_14px_-4px_rgb(0_0_0/0.5)]">
+        <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white p-1 shadow-[0_8px_20px_-4px_rgb(16_185_129/0.4)] ring-1 ring-white/40">
           <img src="/army-mark.png" alt={collapsed ? 'ARMY ENGLISH' : ''} width="32" height="32" className="size-8" />
         </span>
         {!collapsed && (
           <div className="min-w-0 leading-tight">
-            <p className="truncate text-[15px] font-bold tracking-wide text-white">ARMY ENGLISH</p>
-            <p className="truncate text-[11px] font-medium text-side-ink-2">English for future leaders</p>
+            <div className="flex items-center gap-1.5">
+              <p className="truncate text-[14.5px] font-extrabold tracking-wide text-white">ARMY ENGLISH</p>
+              <span className="rounded bg-brand-500/20 px-1.5 py-0.5 text-[9.5px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-inset ring-brand-400/30">PRO</span>
+            </div>
+            <p className="mt-0.5 truncate text-[11px] font-medium text-side-ink-2">Smart Branch Workspace</p>
           </div>
         )}
       </div>
-      {!collapsed && <div className="px-5 pt-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-star/80">Chi nhánh demo</div>}
-      <nav className="scroll-thin flex-1 overflow-y-auto px-2.5 py-2 [scrollbar-color:rgb(255_255_255/0.2)_transparent]">
+      {!collapsed && (
+        <div className="mx-3 mt-3 flex items-center justify-between rounded-xl bg-white/[0.05] px-3 py-2 ring-1 ring-inset ring-white/10">
+          <span className="flex items-center gap-1.5 text-[11px] font-semibold text-white/90">
+            <Sparkles className="size-3.5 text-star" aria-hidden />Chi nhánh Nội bộ
+          </span>
+          <span className="inline-flex items-center gap-1 text-[10.5px] font-medium text-brand-300">
+            <span className="size-1.5 rounded-full bg-brand-400 animate-live" aria-hidden />Trực tuyến
+          </span>
+        </div>
+      )}
+      <nav className="scroll-thin flex-1 overflow-y-auto px-2.5 py-2.5 [scrollbar-color:rgb(255_255_255/0.2)_transparent]">
         {nav.map((g) => (
-          <div key={g.group || 'main'} className="mb-1.5">
-            {g.group && !collapsed && <div className="px-3 pb-1 pt-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-side-ink-2">{g.group}</div>}
+          <div key={g.group || 'main'} className="mb-2">
+            {g.group && !collapsed && <div className="px-3 pb-1.5 pt-2.5 text-[10.5px] font-bold uppercase tracking-[0.12em] text-side-ink-2/80">{g.group}</div>}
             {g.group && collapsed && <div className="mx-3 my-2.5 h-px bg-white/10" />}
             <ul className="space-y-0.5">
               {g.items.map((it) => {
@@ -110,12 +128,14 @@ function SidebarContent({ nav, collapsed, canHr }) {
                 return (
                   <li key={it.to}>
                     <NavLink to={it.to} end={it.end} title={collapsed ? label : undefined}
-                      className={({ isActive }) => clsx('group relative flex h-9 items-center gap-3 rounded-lg text-[13.5px] font-medium transition-colors duration-150',
+                      className={({ isActive }) => clsx('group relative flex h-9 items-center gap-3 rounded-xl text-[13.5px] font-medium transition-all duration-150',
                         collapsed ? 'justify-center px-0' : 'px-3',
-                        isActive ? 'bg-side-active text-white' : 'text-side-ink hover:bg-side-hover hover:text-white')}>
+                        isActive
+                          ? 'bg-gradient-to-r from-brand-500/25 to-brand-500/5 text-white shadow-[inset_0_1px_0_0_rgb(255_255_255/0.12)] ring-1 ring-inset ring-brand-400/30'
+                          : 'text-side-ink hover:bg-side-hover hover:text-white')}>
                       {({ isActive }) => (<>
-                        {isActive && <span className="absolute inset-y-2 left-0 w-[3px] animate-fade-in rounded-r bg-star" aria-hidden />}
-                        <it.icon className={clsx('size-[18px] shrink-0 transition-transform duration-200 group-hover:scale-110', isActive ? 'text-star' : 'text-side-ink-2 group-hover:text-white')} aria-hidden />
+                        {isActive && <span className="absolute inset-y-2 left-0 w-1 animate-fade-in rounded-r-full bg-brand-400 shadow-[0_0_10px_rgb(52_211_153/0.8)]" aria-hidden />}
+                        <it.icon className={clsx('size-[18px] shrink-0 transition-transform duration-200 group-hover:scale-110', isActive ? 'text-brand-300' : 'text-side-ink-2 group-hover:text-white')} aria-hidden />
                         {collapsed ? <span className="sr-only">{label}</span> : <span className="truncate">{label}</span>}
                       </>)}
                     </NavLink>
@@ -126,6 +146,17 @@ function SidebarContent({ nav, collapsed, canHr }) {
           </div>
         ))}
       </nav>
+      {!collapsed && user && (
+        <div className="mx-2.5 mb-2 rounded-xl bg-white/[0.04] p-2.5 ring-1 ring-inset ring-white/10">
+          <div className="flex items-center gap-2.5">
+            <Avatar name={user.full_name} size="sm" className="bg-brand-500/20 text-brand-200 ring-1 ring-brand-400/30" />
+            <div className="min-w-0 flex-1 leading-tight">
+              <p className="truncate text-xs font-semibold text-white">{user.full_name}</p>
+              <p className="truncate text-[11px] text-side-ink-2">{user.roles.map((r) => ROLE_LABELS[r]).join(' · ')}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
@@ -140,15 +171,15 @@ function ThemeMenu() {
     <DM.Root modal={false}>
       <DM.Trigger asChild>
         <button type="button" aria-label={`Đổi nền (đang dùng ${theme === 'dark' ? 'nền tối' : 'nền sáng'})`} title="Đổi nền sáng/tối"
-          className="relative inline-flex size-9 items-center justify-center overflow-hidden rounded-md text-ink-2 transition-colors hover:bg-canvas">
+          className="relative inline-flex size-9 items-center justify-center overflow-hidden rounded-xl text-ink-2 transition-colors hover:bg-canvas">
           <Sun className={clsx('absolute size-[18px] transition-[transform,opacity] duration-300', theme === 'dark' ? 'rotate-90 scale-0 opacity-0' : 'rotate-0 scale-100 opacity-100')} aria-hidden />
           <Moon className={clsx('absolute size-[18px] transition-[transform,opacity] duration-300', theme === 'dark' ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0')} aria-hidden />
         </button>
       </DM.Trigger>
       <DM.Portal>
-        <DM.Content align="end" sideOffset={8} className="menu-anim z-50 w-48 rounded-[var(--radius-card)] border border-line bg-surface p-1 shadow-[var(--shadow-pop)]">
+        <DM.Content align="end" sideOffset={8} className="menu-anim z-50 w-48 rounded-[var(--radius-card)] border border-line bg-surface p-1.5 shadow-[var(--shadow-pop)]">
           {opts.map(([k, l, I]) => (
-            <DM.Item key={k} onSelect={() => choose(k)} className={clsx('flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-sm outline-none data-[highlighted]:bg-canvas', pref === k ? 'font-medium text-brand-700' : 'text-ink')}>
+            <DM.Item key={k} onSelect={() => choose(k)} className={clsx('flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm outline-none data-[highlighted]:bg-canvas', pref === k ? 'font-semibold text-brand-700' : 'text-ink')}>
               <I className="size-4" aria-hidden />{l}{pref === k && <span className="ml-auto text-xs">Đang chọn</span>}
             </DM.Item>
           ))}
@@ -162,8 +193,8 @@ function DemoBadge() {
   const { demoMode } = useAuth();
   if (!demoMode) return null;
   return (
-    <span className="hidden items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800 ring-1 ring-inset ring-amber-200 sm:inline-flex" title="Toàn bộ dữ liệu là dữ liệu giả lập để trình diễn">
-      <FlaskConical className="size-3.5" aria-hidden />Dữ liệu demo
+    <span className="hidden items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800 ring-1 ring-inset ring-amber-200/80 sm:inline-flex" title="Toàn bộ dữ liệu là dữ liệu giả lập để trình diễn">
+      <FlaskConical className="size-3.5 text-amber-600" aria-hidden />Dữ liệu demo
     </span>
   );
 }
@@ -201,17 +232,17 @@ function GlobalSearch() {
       <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-ink-3" aria-hidden />
       <input ref={ref} type="search" value={q} onChange={(e) => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} onBlur={() => setTimeout(() => setOpen(false), 150)}
         onKeyDown={onKeyDown} placeholder="Tìm học viên, phụ huynh, SĐT, lớp…" aria-label="Tìm kiếm nhanh" role="combobox" aria-expanded={open && q.length >= 2} aria-controls="global-search-list"
-        className="field-input h-9 bg-canvas pl-9 pr-14 [&::-webkit-search-cancel-button]:hidden" />
-      <kbd className="pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 rounded border border-line bg-surface px-1.5 text-[10px] font-medium text-ink-3 sm:block">Ctrl K</kbd>
+        className="field-input h-9 rounded-xl border-line bg-canvas/70 pl-9 pr-14 focus:bg-surface [&::-webkit-search-cancel-button]:hidden" />
+      <kbd className="pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 rounded-md border border-line bg-surface px-1.5 py-0.5 text-[10px] font-semibold text-ink-3 shadow-2xs sm:block">Ctrl K</kbd>
       {open && q.trim().length >= 2 && (
-        <div id="global-search-list" role="listbox" className="animate-pop-in absolute left-0 right-0 top-11 z-40 max-h-96 overflow-y-auto rounded-[var(--radius-control)] border border-line bg-surface p-1 shadow-[var(--shadow-pop)]">
+        <div id="global-search-list" role="listbox" className="animate-pop-in absolute left-0 right-0 top-11 z-40 max-h-96 overflow-y-auto rounded-2xl border border-line bg-surface p-1.5 shadow-[var(--shadow-pop)]">
           {state.loading && !state.results.length && <div className="flex items-center gap-2 px-3 py-3 text-sm text-ink-3"><Spinner className="size-4" />Đang tìm…</div>}
           {!state.loading && !state.results.length && <div className="px-3 py-3 text-sm text-ink-3">Không tìm thấy kết quả phù hợp.</div>}
           {state.results.map((r, i) => (
             <button key={`${r.type}-${r.id}`} type="button" role="option" aria-selected={i === active} onMouseDown={(e) => e.preventDefault()} onClick={() => go(r)}
-              className={clsx('flex w-full items-center justify-between gap-3 rounded-md px-3 py-2 text-left', i === active ? 'bg-brand-50' : 'hover:bg-canvas')}>
+              className={clsx('flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2 text-left transition-colors', i === active ? 'bg-brand-50' : 'hover:bg-canvas')}>
               <span className="min-w-0"><span className="block truncate text-sm font-medium text-ink">{r.title}</span><span className="block truncate text-xs text-ink-3">{r.subtitle}</span></span>
-              <span className="shrink-0 rounded bg-canvas px-1.5 py-0.5 text-[11px] text-ink-3">{TYPE[r.type]}</span>
+              <span className="shrink-0 rounded-full bg-canvas px-2 py-0.5 text-[11px] font-medium text-ink-3">{TYPE[r.type]}</span>
             </button>
           ))}
         </div>
@@ -242,7 +273,7 @@ function Notifications() {
   return (
     <Popover.Root open={open} onOpenChange={(v) => { setOpen(v); if (v) reload(); }}>
       <Popover.Trigger asChild>
-        <button type="button" className="relative inline-flex size-9 items-center justify-center rounded-md text-ink-2 hover:bg-canvas" aria-label={`Thông báo${unread ? `, ${unread} chưa đọc` : ''}`}>
+        <button type="button" className="relative inline-flex size-9 items-center justify-center rounded-xl text-ink-2 transition-colors hover:bg-canvas" aria-label={`Thông báo${unread ? `, ${unread} chưa đọc` : ''}`}>
           <Bell className={clsx('size-[18px] origin-top', ring && 'animate-shake')} />
           {unread > 0 && <span key={unread} className="absolute right-1 top-1 min-w-4 animate-pop-in rounded-full bg-army-red px-1 text-center text-[10px] font-semibold leading-4 text-white tabular ring-2 ring-surface">{unread > 9 ? '9+' : unread}</span>}
         </button>
@@ -285,29 +316,29 @@ function AccountMenu({ user }) {
   return (
     <DM.Root modal={false}>
       <DM.Trigger asChild>
-        <button type="button" className="flex items-center gap-2 rounded-md py-1 pl-1 pr-1.5 hover:bg-canvas" aria-label="Tài khoản">
+        <button type="button" className="flex items-center gap-2 rounded-xl py-1 pl-1.5 pr-2 transition-colors hover:bg-canvas" aria-label="Tài khoản">
           <Avatar name={user.full_name} size="sm" />
-          <span className="hidden text-left leading-tight xl:block"><span className="block max-w-36 truncate text-[13px] font-medium">{user.full_name}</span><span className="block max-w-36 truncate text-[11px] text-ink-3">{user.roles.map((r) => ROLE_LABELS[r]).join(' · ')}</span></span>
+          <span className="hidden text-left leading-tight xl:block"><span className="block max-w-36 truncate text-[13px] font-semibold text-ink">{user.full_name}</span><span className="block max-w-36 truncate text-[11px] text-ink-3">{user.roles.map((r) => ROLE_LABELS[r]).join(' · ')}</span></span>
           <ChevronDown className="hidden size-3.5 text-ink-3 xl:block" aria-hidden />
         </button>
       </DM.Trigger>
       <DM.Portal>
-        <DM.Content align="end" sideOffset={8} className="menu-anim z-50 w-72 rounded-[var(--radius-card)] border border-line bg-surface p-1 shadow-[var(--shadow-pop)]">
+        <DM.Content align="end" sideOffset={8} className="menu-anim z-50 w-72 rounded-[var(--radius-card)] border border-line bg-surface p-1.5 shadow-[var(--shadow-pop)]">
           <div className="px-3 py-2.5">
             <p className="text-sm font-semibold">{user.full_name}</p>
             <p className="text-xs text-ink-3">{user.title}</p>
-            <div className="mt-1.5 flex flex-wrap gap-1">{user.roles.map((r) => <span key={r} className="rounded bg-brand-50 px-1.5 py-0.5 text-[11px] font-medium text-brand-800">{ROLE_LABELS[r]}</span>)}</div>
+            <div className="mt-1.5 flex flex-wrap gap-1">{user.roles.map((r) => <span key={r} className="rounded-md bg-brand-50 px-2 py-0.5 text-[11px] font-semibold text-brand-800 ring-1 ring-inset ring-brand-200/60">{ROLE_LABELS[r]}</span>)}</div>
           </div>
           <DM.Separator className="my-1 h-px bg-line" />
-          <DM.Item onSelect={() => navigate('/account')} className="flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-sm outline-none data-[highlighted]:bg-canvas"><UserCog className="size-4 text-ink-3" />Tài khoản & phân quyền</DM.Item>
+          <DM.Item onSelect={() => navigate('/account')} className="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm outline-none data-[highlighted]:bg-canvas"><UserCog className="size-4 text-ink-3" />Tài khoản & phân quyền</DM.Item>
           {demoMode && data?.accounts?.length > 0 && (
             <DM.Sub>
-              <DM.SubTrigger className="flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-sm outline-none data-[highlighted]:bg-canvas data-[state=open]:bg-canvas"><Repeat2 className="size-4 text-ink-3" />Chuyển nhanh tài khoản demo</DM.SubTrigger>
+              <DM.SubTrigger className="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm outline-none data-[highlighted]:bg-canvas data-[state=open]:bg-canvas"><Repeat2 className="size-4 text-ink-3" />Chuyển nhanh tài khoản demo</DM.SubTrigger>
               <DM.Portal>
-                <DM.SubContent sideOffset={6} className="menu-anim z-50 max-h-[70vh] w-72 overflow-y-auto rounded-[var(--radius-card)] border border-line bg-surface p-1 shadow-[var(--shadow-pop)]">
+                <DM.SubContent sideOffset={6} className="menu-anim z-50 max-h-[70vh] w-72 overflow-y-auto rounded-[var(--radius-card)] border border-line bg-surface p-1.5 shadow-[var(--shadow-pop)]">
                   <p className="px-3 py-2 text-[11px] text-ink-3">Chỉ có trong chế độ demo. Dữ liệu và menu thay đổi theo quyền của tài khoản.</p>
                   {data.accounts.map((a) => (
-                    <DM.Item key={a.id} disabled={a.id === user.id} onSelect={() => doSwitch(a)} className="flex cursor-pointer flex-col items-start rounded-md px-3 py-2 outline-none data-[highlighted]:bg-canvas data-[disabled]:cursor-default data-[disabled]:bg-brand-50/60">
+                    <DM.Item key={a.id} disabled={a.id === user.id} onSelect={() => doSwitch(a)} className="flex cursor-pointer flex-col items-start rounded-lg px-3 py-2 outline-none data-[highlighted]:bg-canvas data-[disabled]:cursor-default data-[disabled]:bg-brand-50/60">
                       <span className="text-sm font-medium">{a.full_name}{a.id === user.id && ' (đang dùng)'}</span>
                       <span className="text-xs text-ink-3">{a.roleLabels.join(' · ')}</span>
                     </DM.Item>
@@ -317,7 +348,7 @@ function AccountMenu({ user }) {
             </DM.Sub>
           )}
           <DM.Separator className="my-1 h-px bg-line" />
-          <DM.Item onSelect={async () => { await logout(); navigate('/login'); }} className="flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 text-sm text-red-700 outline-none data-[highlighted]:bg-red-50"><LogOut className="size-4" />Đăng xuất</DM.Item>
+          <DM.Item onSelect={async () => { await logout(); navigate('/login'); }} className="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-sm text-red-700 outline-none data-[highlighted]:bg-red-50"><LogOut className="size-4" />Đăng xuất</DM.Item>
         </DM.Content>
       </DM.Portal>
     </DM.Root>

@@ -6,7 +6,7 @@ import { useApi, useUrlFilters } from '../../lib/hooks.js';
 import { useAuth } from '../../lib/auth.jsx';
 import { qs } from '../../lib/api.js';
 import { money, num, date, relativeDay, dateTime } from '../../lib/format.js';
-import { APPROVAL_TYPES } from '../../lib/labels.js';
+import { APPROVAL_TYPES, ROLE_LABELS } from '../../lib/labels.js';
 import { Card, CardHeader, StatTile, StatusBadge, Badge, ErrorState, Skeleton, EmptyState } from '../../components/ui/index.js';
 import { PeriodFilter } from '../../components/PeriodFilter.jsx';
 import { GroupedBars } from '../../components/charts.jsx';
@@ -27,33 +27,41 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <section className="side-panel relative mb-5 overflow-hidden rounded-[var(--radius-card)] border border-white/10 px-5 py-5 text-white shadow-[var(--shadow-lift)] sm:px-6">
-        <img src="/army-mark.png" alt="" width="200" height="200" aria-hidden className="pointer-events-none absolute -right-8 -top-10 size-48 rotate-12 animate-float opacity-[0.09] sm:size-56" />
+      <section className="side-panel relative mb-6 overflow-hidden rounded-2xl border border-white/10 px-5 py-6 text-white shadow-[0_20px_44px_-16px_rgb(15_23_42/0.4)] sm:px-7">
+        <div className="pointer-events-none absolute -right-16 -top-16 size-64 rounded-full bg-[radial-gradient(circle,rgb(16_185_129/0.35),transparent_68%)]" aria-hidden />
+        <img src="/army-mark.png" alt="" width="200" height="200" aria-hidden className="pointer-events-none absolute -right-6 -top-8 size-48 rotate-12 animate-float opacity-[0.08] sm:size-56" />
         <div className="relative flex flex-wrap items-end justify-between gap-4">
           <div className="min-w-0">
-            <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-star"><Sparkles className="size-3.5" aria-hidden />ARMY ENGLISH · Chi nhánh demo</p>
-            <h1 className="mt-1.5 text-2xl font-semibold tracking-tight sm:text-[28px]">{greet}, {user.full_name.split(' ').at(-1)}</h1>
-            <p className="mt-1 text-sm text-side-ink">{data ? `${new Intl.DateTimeFormat('vi-VN', { weekday: 'long', timeZone: 'Asia/Ho_Chi_Minh' }).format(new Date())}, ${date(data.today)}. Số liệu tính trực tiếp từ dữ liệu nghiệp vụ.` : 'Đang tải số liệu…'}</p>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-brand-300 ring-1 ring-inset ring-white/15">
+                <Sparkles className="size-3 text-star" aria-hidden />ARMY ENGLISH
+              </span>
+              <span className="rounded-full bg-brand-500/20 px-2.5 py-0.5 text-[11px] font-semibold text-white ring-1 ring-inset ring-brand-400/30">
+                {user.roles.map((r) => ROLE_LABELS[r]).join(' · ')}
+              </span>
+            </div>
+            <h1 className="mt-2.5 text-2xl font-extrabold tracking-tight sm:text-3xl">{greet}, {user.full_name}</h1>
+            <p className="mt-1 text-sm text-side-ink">{data ? `${new Intl.DateTimeFormat('vi-VN', { weekday: 'long', timeZone: 'Asia/Ho_Chi_Minh' }).format(new Date())}, ${date(data.today)} · Dữ liệu đồng bộ thời gian thực.` : 'Đang tải số liệu…'}</p>
             {data && (
-              <div className="mt-3 flex flex-wrap gap-2 text-xs">
-                {data.scheduleVisible && <span className="rounded-full bg-white/10 px-2.5 py-1 ring-1 ring-inset ring-white/15">{data.todaySessions.length} buổi học hôm nay</span>}
-                {data.trialsToday.length > 0 && <span className="rounded-full bg-white/10 px-2.5 py-1 ring-1 ring-inset ring-white/15">{data.trialsToday.length} lịch học thử / kiểm tra</span>}
-                {data.todo.approvals?.length > 0 && <span className="rounded-full bg-star/15 px-2.5 py-1 text-star ring-1 ring-inset ring-star/30">{data.todo.approvals.length} đề xuất {data.todo.approvals[0]?.mode === 'to_pay' ? 'chờ chi' : 'chờ xử lý'}</span>}
+              <div className="mt-3.5 flex flex-wrap gap-2 text-xs">
+                {data.scheduleVisible && <span className="rounded-full bg-white/10 px-3 py-1 font-medium ring-1 ring-inset ring-white/15 backdrop-blur-xs">{data.todaySessions.length} buổi học hôm nay</span>}
+                {data.trialsToday.length > 0 && <span className="rounded-full bg-white/10 px-3 py-1 font-medium ring-1 ring-inset ring-white/15 backdrop-blur-xs">{data.trialsToday.length} lịch học thử / kiểm tra</span>}
+                {data.todo.approvals?.length > 0 && <span className="rounded-full bg-star/20 px-3 py-1 font-semibold text-star ring-1 ring-inset ring-star/35">{data.todo.approvals.length} đề xuất {data.todo.approvals[0]?.mode === 'to_pay' ? 'chờ chi' : 'chờ xử lý'}</span>}
               </div>
             )}
           </div>
-          <div className="[&_.text-ink-3]:text-side-ink"><PeriodFilter period={f.period} from={f.from} to={f.to} onChange={setF} resolved={data?.period} /></div>
+          <div className="rounded-xl bg-white/[0.06] p-1.5 ring-1 ring-inset ring-white/10 backdrop-blur-md [&_.text-ink-3]:text-side-ink"><PeriodFilter period={f.period} from={f.from} to={f.to} onChange={setF} resolved={data?.period} /></div>
         </div>
       </section>
 
       {error && !data && <Card><ErrorState error={error} onRetry={reload} /></Card>}
-      {!data && loading && <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-6">{Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} className="h-[104px]" />)}</div>}
+      {!data && loading && <div className="grid grid-cols-2 gap-3.5 lg:grid-cols-3 xl:grid-cols-6">{Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} className="h-[112px]" />)}</div>}
 
       {data && (
         <div className={clsx('space-y-5 transition-opacity', loading && 'opacity-70')}>
           <WorkPanel work={data.work} />
           <section aria-label="Chỉ số chính">
-            <div className="stagger grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-6">
+            <div className="stagger grid grid-cols-2 gap-3.5 lg:grid-cols-3 xl:grid-cols-6">
               {KPI_ORDER.filter((k) => data.kpis[k]).map((k, i) => {
                 const x = data.kpis[k];
                 return (
@@ -62,17 +70,17 @@ export default function DashboardPage() {
                 );
               })}
             </div>
-            <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-ink-3">
-              <button type="button" className="inline-flex items-center gap-1 font-medium text-brand-700 hover:underline" onClick={() => setShowDefs((s) => !s)} aria-expanded={showDefs}>
+            <div className="mt-2.5 flex flex-wrap items-center gap-3 text-xs text-ink-3">
+              <button type="button" className="inline-flex items-center gap-1 font-semibold text-brand-700 hover:underline" onClick={() => setShowDefs((s) => !s)} aria-expanded={showDefs}>
                 <Info className="size-3.5" />{showDefs ? 'Ẩn định nghĩa chỉ số' : 'Định nghĩa chỉ số'}
               </button>
-              <span>Nhấn vào thẻ để mở danh sách tương ứng.</span>
+              <span>Nhấn vào thẻ Bento bất kỳ để mở danh sách chi tiết tương ứng.</span>
             </div>
             {showDefs && (
-              <Card className="mt-2 p-4">
+              <Card className="mt-2.5 p-4">
                 <dl className="grid gap-3 text-[13px] sm:grid-cols-2">
                   {Object.entries(data.definitions).filter(([k]) => data.kpis[k] || k === 'enrolledInPeriod').map(([k, d]) => (
-                    <div key={k}><dt className="font-medium text-ink">{data.kpis[k]?.label || 'Đăng ký trong kỳ'}</dt><dd className="text-ink-3">{d}</dd></div>
+                    <div key={k}><dt className="font-semibold text-ink">{data.kpis[k]?.label || 'Đăng ký trong kỳ'}</dt><dd className="text-ink-3">{d}</dd></div>
                   ))}
                 </dl>
               </Card>
@@ -117,7 +125,7 @@ const addMin = (hm, m) => { const t = Number(hm.slice(0, 2)) * 60 + Number(hm.sl
 function LiveBadge({ start, end, done }) {
   const now = nowHM();
   if (done) return null;
-  if (start <= now && now < end) return <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-800 ring-1 ring-inset ring-brand-200"><span className="size-2 animate-live rounded-full bg-brand-500" aria-hidden />Đang diễn ra</span>;
+  if (start <= now && now < end) return <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2 py-0.5 text-xs font-semibold text-brand-800 ring-1 ring-inset ring-brand-200"><span className="size-2 animate-live rounded-full bg-brand-500" aria-hidden />Đang diễn ra</span>;
   if (now < start && start <= addMin(now, 60)) return <Badge tone="info">Sắp bắt đầu</Badge>;
   return null;
 }
@@ -130,15 +138,15 @@ function TodaySchedule({ data }) {
   return (
     <Card>
       <CardHeader title="Lịch hôm nay" icon={CalendarDays} description={`${data.todaySessions.length} buổi học · ${data.trialsToday.length} lịch học thử/kiểm tra`}
-        actions={<Link to={`/schedule?view=day&date=${data.today}`} className="text-[13px] font-medium text-brand-700 hover:underline">Mở lịch</Link>} />
+        actions={<Link to={`/schedule?view=day&date=${data.today}`} className="text-[13px] font-semibold text-brand-700 hover:underline">Mở lịch</Link>} />
       {!items.length ? <EmptyState compact title="Hôm nay không có lịch học" description="Xem lịch tuần để chuẩn bị các buổi sắp tới." /> : (
         <ul className="divide-y divide-line border-t border-line">
           {items.map((it) => (it.kind === 'session' ? (
             <li key={`s${it.s.id}`}>
-              <Link to={`/schedule?view=day&date=${data.today}&session=${it.s.id}`} className="group flex items-center gap-4 px-4 py-3 transition-colors hover:bg-canvas sm:px-5">
-                <div className="w-14 shrink-0 text-center"><p className="text-sm font-semibold tabular">{it.s.start_time}</p><p className="text-xs text-ink-3 tabular">{it.s.end_time}</p></div>
+              <Link to={`/schedule?view=day&date=${data.today}&session=${it.s.id}`} className="group flex items-center gap-4 px-4 py-3 transition-colors hover:bg-canvas/70 sm:px-5">
+                <div className="w-14 shrink-0 rounded-xl bg-surface-2 px-2 py-1 text-center ring-1 ring-inset ring-line"><p className="text-xs font-bold tabular text-ink">{it.s.start_time}</p><p className="text-[11px] text-ink-3 tabular">{it.s.end_time}</p></div>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium">{it.s.class_code ? `${it.s.class_code} · ${it.s.class_name}` : it.s.title}</p>
+                  <p className="truncate text-sm font-semibold text-ink group-hover:text-brand-700">{it.s.class_code ? `${it.s.class_code} · ${it.s.class_name}` : it.s.title}</p>
                   <p className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-ink-3">
                     <span className="inline-flex items-center gap-1"><MapPin className="size-3" />{it.s.room_name}</span>
                     <span>GV: {it.s.teacher_name}{it.s.assistant_name ? ` · TG: ${it.s.assistant_name}` : ''}</span>
@@ -152,10 +160,10 @@ function TodaySchedule({ data }) {
             </li>
           ) : (
             <li key={`t${it.t.id}`}>
-              <Link to={`/leads/${it.t.lead_id}`} className="group flex items-center gap-4 px-4 py-3 transition-colors hover:bg-canvas sm:px-5">
-                <div className="w-14 shrink-0 text-center"><p className="text-sm font-semibold tabular">{it.t.start_time}</p><p className="text-xs text-ink-3 tabular">{it.t.end_time}</p></div>
+              <Link to={`/leads/${it.t.lead_id}`} className="group flex items-center gap-4 px-4 py-3 transition-colors hover:bg-canvas/70 sm:px-5">
+                <div className="w-14 shrink-0 rounded-xl bg-amber-50/70 px-2 py-1 text-center ring-1 ring-inset ring-amber-200/70"><p className="text-xs font-bold tabular text-amber-900">{it.t.start_time}</p><p className="text-[11px] text-amber-700 tabular">{it.t.end_time}</p></div>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium">{it.t.type === 'placement' ? 'Kiểm tra đầu vào' : 'Học thử'}: {it.t.student_name}</p>
+                  <p className="truncate text-sm font-semibold text-ink group-hover:text-brand-700">{it.t.type === 'placement' ? 'Kiểm tra đầu vào' : 'Học thử'}: {it.t.student_name}</p>
                   <p className="mt-0.5 text-xs text-ink-3">{it.t.room_name} · {it.t.teacher_name}</p>
                 </div>
                 <LiveBadge start={it.t.start_time} end={it.t.end_time} />
@@ -182,8 +190,8 @@ function TodoPanel({ data }) {
     todo.approvals && { value: 'approvals', label: todo.approvals[0]?.mode === 'to_pay' ? 'Chờ chi' : 'Chờ duyệt', count: todo.approvals.length },
   ].filter(Boolean);
   const Row = ({ to, title, sub, right }) => (
-    <li><Link to={to} className="group flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-canvas sm:px-5">
-      <div className="min-w-0 flex-1"><p className="truncate text-sm font-medium text-ink">{title}</p>{sub && <p className="truncate text-xs text-ink-3">{sub}</p>}</div>
+    <li><Link to={to} className="group flex items-center gap-3 px-4 py-2.5 transition-colors hover:bg-canvas/70 sm:px-5">
+      <div className="min-w-0 flex-1"><p className="truncate text-sm font-semibold text-ink group-hover:text-brand-700">{title}</p>{sub && <p className="truncate text-xs text-ink-3">{sub}</p>}</div>
       {right}<ChevronRight className="size-4 shrink-0 text-ink-3 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden />
     </Link></li>
   );
@@ -194,7 +202,7 @@ function TodoPanel({ data }) {
         <div role="tablist" className="flex flex-wrap gap-1.5">
           {tabs.map((t) => (
             <button key={t.value} type="button" role="tab" aria-selected={tab === t.value} onClick={() => setTab(t.value)}
-              className={clsx('rounded-full px-3 py-1 text-xs font-medium ring-1 ring-inset transition-colors duration-200', tab === t.value ? 'bg-brand-600 text-white ring-brand-600' : 'bg-surface text-ink-2 ring-line hover:bg-canvas')}>
+              className={clsx('rounded-xl px-3 py-1.5 text-xs font-semibold ring-1 ring-inset transition-all duration-200', tab === t.value ? 'bg-brand-600 text-white shadow-xs ring-brand-600' : 'bg-surface-2 text-ink-2 ring-line hover:bg-canvas')}>
               {t.label} <span className="tabular">({t.count})</span>
             </button>
           ))}
@@ -211,14 +219,14 @@ function TodoPanel({ data }) {
             right={a.priority ? <StatusBadge kind="care" value={a.status} /> : <StatusBadge kind="attendance" value={a.status} />} />
         )) : <li><EmptyState compact title="Không có học viên vắng cần xử lý" /></li>)}
         {tab === 'receivables' && (todo.receivables.length ? todo.receivables.map((r) => (
-          <Row key={r.id} to={`/students/${r.student_id}?tab=finance`} title={r.student_name} sub={`${r.code} · hạn ${date(r.due_date)}`} right={<span className="text-sm font-semibold text-red-700 tabular">{money(r.overdue)}</span>} />
+          <Row key={r.id} to={`/students/${r.student_id}?tab=finance`} title={r.student_name} sub={`${r.code} · hạn ${date(r.due_date)}`} right={<span className="text-sm font-bold text-red-700 tabular">{money(r.overdue)}</span>} />
         )) : <li><EmptyState compact title="Không có khoản quá hạn" /></li>)}
         {tab === 'approvals' && (todo.approvals.length ? todo.approvals.map((a) => (
-          <Row key={a.id} to={`/approvals?id=${a.id}`} title={a.title} sub={`${a.code} · ${APPROVAL_TYPES[a.type]}${a.requester ? ` · ${a.requester}` : ''}`} right={a.amount ? <span className="text-sm tabular">{money(a.amount)}</span> : null} />
+          <Row key={a.id} to={`/approvals?id=${a.id}`} title={a.title} sub={`${a.code} · ${APPROVAL_TYPES[a.type]}${a.requester ? ` · ${a.requester}` : ''}`} right={a.amount ? <span className="text-sm font-semibold tabular">{money(a.amount)}</span> : null} />
         )) : <li><EmptyState compact title="Không có đề xuất cần xử lý" /></li>)}
       </ul>
-      <div className="border-t border-line px-4 py-2.5 sm:px-5">
-        <Link className="text-[13px] font-medium text-brand-700 hover:underline" to={{ trials: '/leads?appointment=trial_upcoming', absences: '/training?tab=absences', receivables: '/finance?status=overdue', approvals: '/approvals' }[tab] || '/'}>Xem tất cả</Link>
+      <div className="border-t border-line bg-surface-2/30 px-4 py-2.5 sm:px-5">
+        <Link className="text-[13px] font-semibold text-brand-700 hover:underline" to={{ trials: '/leads?appointment=trial_upcoming', absences: '/training?tab=absences', receivables: '/finance?status=overdue', approvals: '/approvals' }[tab] || '/'}>Xem tất cả</Link>
       </div>
     </Card>
   );

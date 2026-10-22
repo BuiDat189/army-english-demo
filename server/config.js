@@ -11,12 +11,13 @@ if (fs.existsSync(envFile) && !process.env.VITEST) {
 }
 
 const bool = (v, def) => (v === undefined || v === '' ? def : ['1', 'true', 'yes', 'on'].includes(String(v).toLowerCase()));
+const isCloud = Boolean(process.env.RENDER || process.env.RAILWAY_ENVIRONMENT || process.env.FLY_APP_NAME);
 
 export const config = {
   root: ROOT,
   env: process.env.NODE_ENV || 'development',
   port: Number(process.env.PORT || 3000),
-  host: process.env.HOST || '127.0.0.1',
+  host: process.env.HOST || (isCloud ? '0.0.0.0' : '127.0.0.1'),
   dbFile: process.env.DB_FILE ? path.resolve(ROOT, process.env.DB_FILE) : path.join(ROOT, 'data', 'army-demo.sqlite'),
   // Chế độ demo: bật tài khoản demo, chuyển nhanh tài khoản, nút reset. Phải tắt khi không phải môi trường demo.
   demoMode: bool(process.env.DEMO_MODE, true),

@@ -1,48 +1,47 @@
 @import "tailwindcss";
 
-/* Hệ thiết kế: xanh lá lấy từ logo ARMY ENGLISH (#138A43 / #2D904F trên army.edu.vn).
-   Đỏ của logo chỉ dùng cho trạng thái nguy hiểm; vàng sao dùng điểm nhấn rất hạn chế.
+/* Hệ thiết kế Bento SaaS: Xanh Emerald (#10b981 / #059669) kết hợp Indigo Slate (#0f172a -> #1e1b4b).
    Nền tối: KHÔNG đảo tự động — mỗi biến được khai lại trong [data-theme="dark"] bên dưới.
    Danh sách biến của hai khối phải trùng nhau (kiểm bằng tests/e2e/theme-parity.js). */
 @theme {
   --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
 
-  --color-brand-50: #eef7f1;
-  --color-brand-100: #d7eedf;
-  --color-brand-200: #afdcbf;
-  --color-brand-300: #7ec498;
-  --color-brand-400: #48a76d;
-  --color-brand-500: #2d904f;
-  --color-brand-600: #1f7a40;
-  --color-brand-700: #1a6435;
-  --color-brand-800: #164f2c;
-  --color-brand-900: #113d22;
-  --color-btn: #1f7a40;
-  --color-btn-hover: #19683a;
-  --color-star: #fccf3e;
-  --color-army-red: #e31f26;
+  --color-brand-50: #ecfdf5;
+  --color-brand-100: #d1fae5;
+  --color-brand-200: #a7f3d0;
+  --color-brand-300: #6ee7b7;
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065f46;
+  --color-brand-900: #064e3b;
+  --color-btn: #059669;
+  --color-btn-hover: #047857;
+  --color-star: #fbbf24;
+  --color-army-red: #e11d48;
 
-  --color-canvas: #f4f5f7;
+  --color-canvas: #f1f5f9;
   --color-surface: #ffffff;
-  --color-surface-2: #f8f9fb;
-  --color-line: #e4e7ec;
-  --color-line-strong: #d0d5dd;
-  --color-ink: #101828;
-  --color-ink-2: #344054;
-  --color-ink-3: #5d6878;
+  --color-surface-2: #f8fafc;
+  --color-line: #e2e8f0;
+  --color-line-strong: #cbd5e1;
+  --color-ink: #0f172a;
+  --color-ink-2: #334155;
+  --color-ink-3: #64748b;
 
-  --color-side: #15233d;
-  --color-side-2: #0c1628;
-  --color-side-ink: #d5ddea;
-  --color-side-ink-2: #8e9bb3;
-  --color-side-hover: rgb(255 255 255 / 0.07);
-  --color-side-active: rgb(255 255 255 / 0.12);
+  --color-side: #0f172a;
+  --color-side-2: #1e1b4b;
+  --color-side-ink: #e2e8f0;
+  --color-side-ink-2: #94a3b8;
+  --color-side-hover: rgb(255 255 255 / 0.08);
+  --color-side-active: rgb(16 185 129 / 0.18);
 
-  --radius-control: 8px;
-  --radius-card: 12px;
-  --shadow-card: 0 1px 2px rgb(16 24 40 / 0.05), 0 1px 1px rgb(16 24 40 / 0.03);
-  --shadow-lift: 0 10px 24px -12px rgb(16 24 40 / 0.22), 0 2px 6px -2px rgb(16 24 40 / 0.08);
-  --shadow-pop: 0 18px 40px -16px rgb(16 24 40 / 0.32), 0 4px 10px -4px rgb(16 24 40 / 0.10);
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --shadow-card: 0 1px 3px rgb(15 23 42 / 0.04), 0 6px 16px -4px rgb(15 23 42 / 0.05);
+  --shadow-lift: 0 16px 32px -10px rgb(15 23 42 / 0.14), 0 4px 10px -3px rgb(15 23 42 / 0.06);
+  --shadow-pop: 0 22px 48px -12px rgb(15 23 42 / 0.24), 0 6px 14px -4px rgb(15 23 42 / 0.08);
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --animate-fade-in: fade-in 180ms var(--ease-out-soft) both;
@@ -67,40 +66,40 @@
 /* ---------- Nền tối ---------- */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --color-brand-50: #11261a;
-  --color-brand-100: #163220;
-  --color-brand-200: #1f4a2f;
-  --color-brand-300: #2c6a43;
-  --color-brand-400: #45a066;
-  --color-brand-500: #4fb574;
-  --color-brand-600: #1f7a40;
-  --color-brand-700: #6cc98d;
-  --color-brand-800: #9ddcb3;
-  --color-brand-900: #cdeedb;
-  --color-btn: #23854a;
-  --color-btn-hover: #2b9857;
-  --color-star: #fccf3e;
-  --color-army-red: #ef4444;
+  --color-brand-50: #06281e;
+  --color-brand-100: #0a3829;
+  --color-brand-200: #11523c;
+  --color-brand-300: #187556;
+  --color-brand-400: #28a87d;
+  --color-brand-500: #34d399;
+  --color-brand-600: #059669;
+  --color-brand-700: #6ee7b7;
+  --color-brand-800: #a7f3d0;
+  --color-brand-900: #d1fae5;
+  --color-btn: #10b981;
+  --color-btn-hover: #059669;
+  --color-star: #fbbf24;
+  --color-army-red: #f43f5e;
 
-  --color-canvas: #0b0f17;
-  --color-surface: #121826;
-  --color-surface-2: #161d2d;
-  --color-line: #232c3d;
-  --color-line-strong: #303a4e;
-  --color-ink: #e6e9ef;
-  --color-ink-2: #b6becc;
-  --color-ink-3: #8a94a6;
+  --color-canvas: #090d16;
+  --color-surface: #111827;
+  --color-surface-2: #1e293b;
+  --color-line: #1f2937;
+  --color-line-strong: #334155;
+  --color-ink: #f1f5f9;
+  --color-ink-2: #cbd5e1;
+  --color-ink-3: #94a3b8;
 
-  --color-side: #0d1526;
-  --color-side-2: #080e1a;
-  --color-side-ink: #cfd7e4;
-  --color-side-ink-2: #8792a8;
+  --color-side: #0b1120;
+  --color-side-2: #151b30;
+  --color-side-ink: #e2e8f0;
+  --color-side-ink-2: #94a3b8;
   --color-side-hover: rgb(255 255 255 / 0.06);
-  --color-side-active: rgb(79 181 116 / 0.16);
+  --color-side-active: rgb(52 211 153 / 0.16);
 
-  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.35);
-  --shadow-lift: 0 12px 28px -12px rgb(0 0 0 / 0.65), 0 2px 6px -2px rgb(0 0 0 / 0.4);
-  --shadow-pop: 0 20px 48px -16px rgb(0 0 0 / 0.75), 0 4px 12px -4px rgb(0 0 0 / 0.5);
+  --shadow-card: 0 1px 3px rgb(0 0 0 / 0.4), 0 6px 16px -4px rgb(0 0 0 / 0.35);
+  --shadow-lift: 0 16px 32px -10px rgb(0 0 0 / 0.7), 0 4px 10px -2px rgb(0 0 0 / 0.45);
+  --shadow-pop: 0 22px 50px -14px rgb(0 0 0 / 0.8), 0 6px 14px -4px rgb(0 0 0 / 0.55);
 
   /* Bảng màu trạng thái: nền nhạt ⇢ sắc tối, chữ đậm ⇢ sắc sáng */
   --color-slate-50: #1a2030; --color-slate-100: #212839; --color-slate-200: #2c3447; --color-slate-300: #3c4559;
@@ -119,45 +118,54 @@
 
 @layer base {
   html { -webkit-text-size-adjust: 100%; }
-  body { @apply bg-canvas text-ink antialiased; }
-  :focus-visible { outline: 2px solid var(--color-brand-500); outline-offset: 2px; border-radius: 4px; }
+  body {
+    @apply bg-canvas text-ink antialiased;
+    background-image:
+      radial-gradient(at 0% 0%, rgb(16 185 129 / 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgb(99 102 241 / 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+  :focus-visible { outline: 2px solid var(--color-brand-500); outline-offset: 2px; border-radius: 6px; }
   input, select, textarea, button { font: inherit; }
   ::selection { background: var(--color-brand-200); }
   [hidden] { display: none !important; }
-  /* Chỉ chuyển màu mượt trong lúc đổi nền sáng/tối, không ảnh hưởng thao tác thường */
   .theme-switching, .theme-switching * { transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease, fill 220ms ease !important; }
 }
 
 @layer components {
   .tabular { font-variant-numeric: tabular-nums; }
-  .card { @apply bg-surface border border-line rounded-[var(--radius-card)] shadow-[var(--shadow-card)]; }
-  .card-lift { @apply transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]; }
+  .card {
+    @apply bg-surface border border-line/90 rounded-[var(--radius-card)] shadow-[var(--shadow-card)];
+  }
+  .card-lift {
+    @apply transition-[transform,box-shadow,border-color] duration-200 ease-out hover:-translate-y-1 hover:shadow-[var(--shadow-lift)];
+  }
   .field-input {
     @apply block w-full h-9 rounded-[var(--radius-control)] border border-line-strong bg-surface px-3 text-sm text-ink placeholder:text-ink-3/70
-      transition-[border-color,box-shadow] duration-150 hover:border-ink-3/60 focus:border-brand-500 focus:outline-none focus:ring-3 focus:ring-brand-500/20
+      transition-[border-color,box-shadow,background-color] duration-150 hover:border-ink-3/60 focus:border-brand-500 focus:outline-none focus:ring-3 focus:ring-brand-500/20
       disabled:bg-canvas disabled:text-ink-3 disabled:cursor-not-allowed;
   }
   .field-input[aria-invalid="true"] { @apply border-red-500 focus:border-red-500 focus:ring-red-500/20; }
   textarea.field-input { @apply h-auto py-2 leading-relaxed; }
   select.field-input { @apply pr-8 appearance-none bg-no-repeat; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238a94a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-position: right 0.6rem center; }
   select.field-input option { background: var(--color-surface); color: var(--color-ink); }
-  /* Sidebar xanh quân đội: nền chuyển nhẹ + hoạ tiết chấm mờ */
+  /* Sidebar & Hero Mesh Bento: Indigo-Slate sâu kết hợp ánh sáng Emerald & Indigo */
   .side-panel {
     background:
-      radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.05) 1px, transparent 0) 0 0 / 18px 18px,
-      linear-gradient(180deg, var(--color-side) 0%, var(--color-side-2) 100%);
+      radial-gradient(circle at 12% 15%, rgb(16 185 129 / 0.18) 0%, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgb(99 102 241 / 0.22) 0%, transparent 50%),
+      radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.05) 1px, transparent 0) 0 0 / 20px 20px,
+      linear-gradient(155deg, var(--color-side) 0%, var(--color-side-2) 100%);
     color: var(--color-side-ink);
   }
   .scroll-thin { scrollbar-width: thin; scrollbar-color: var(--color-line-strong) transparent; }
 
-  /* Xuất hiện lần lượt: đặt style={{ '--i': chỉ_số }} cho từng phần tử con */
   .stagger > * { animation: rise 380ms var(--ease-out-soft) both; animation-delay: calc(var(--i, 0) * 45ms); }
   .skeleton-shimmer {
     background: linear-gradient(90deg, var(--color-line) 0%, var(--color-surface-2) 45%, var(--color-line) 90%);
     background-size: 220% 100%;
     animation: var(--animate-shimmer);
   }
-  /* Radix: vào/ra cho modal, drawer, menu */
   .ov-anim[data-state="open"] { animation: var(--animate-fade-in); }
   .ov-anim[data-state="closed"] { animation: var(--animate-fade-out); }
   .modal-anim[data-state="open"] { animation: var(--animate-sheet-in); }
@@ -185,14 +193,13 @@
 @keyframes toast-in { from { opacity: 0; transform: translateY(14px) scale(0.97); } to { opacity: 1; transform: none; } }
 @keyframes toast-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateX(24px); } }
 @keyframes shimmer { from { background-position: 120% 0; } to { background-position: -120% 0; } }
-@keyframes live { 0% { box-shadow: 0 0 0 0 rgb(79 181 116 / 0.55); } 80%, 100% { box-shadow: 0 0 0 7px rgb(79 181 116 / 0); } }
+@keyframes live { 0% { box-shadow: 0 0 0 0 rgb(16 185 129 / 0.55); } 80%, 100% { box-shadow: 0 0 0 7px rgb(16 185 129 / 0); } }
 @keyframes shake { 0%, 100% { transform: rotate(0); } 20% { transform: rotate(-14deg); } 40% { transform: rotate(11deg); } 60% { transform: rotate(-7deg); } 80% { transform: rotate(4deg); } }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 @keyframes drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-44px, -44px, 0); } }
 @keyframes side-in { from { transform: translateX(-100%); } to { transform: none; } }
 @keyframes bar-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
-/* Máy cảm ứng: vùng bấm tối thiểu 44px (dò theo con trỏ, không theo bề rộng màn) */
 @media (pointer: coarse) {
   .btn-text, .field-input { min-height: 44px; }
 }
@@ -202,7 +209,6 @@
   .no-print { display: none !important; }
 }
 
-/* Người dùng bật "giảm chuyển động": tắt mọi hiệu ứng */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; animation-delay: 0ms !important; transition-duration: 0.01ms !important; }
 }

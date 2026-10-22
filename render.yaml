@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: army-english-demo
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.14.0
+      - key: HOST
+        value: 0.0.0.0
+      - key: DEMO_MODE
+        value: "true"

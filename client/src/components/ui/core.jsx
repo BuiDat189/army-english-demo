@@ -5,13 +5,13 @@ import { STATUS } from '../../lib/labels.js';
 import { initials } from '../../lib/format.js';
 
 const BTN = {
-  base: 'btn inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium rounded-[var(--radius-control)] select-none transition-[background-color,border-color,color,box-shadow,transform] duration-150 ease-out active:scale-[0.97] disabled:opacity-55 disabled:cursor-not-allowed disabled:active:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2',
+  base: 'btn inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold rounded-[var(--radius-control)] select-none transition-[background-color,border-color,color,box-shadow,transform] duration-150 ease-out active:scale-[0.97] disabled:opacity-55 disabled:cursor-not-allowed disabled:active:scale-100 focus-visible:outline-2 focus-visible:outline-offset-2',
   size: { sm: 'h-8 px-3 text-[13px]', md: 'h-9 px-3.5 text-sm', lg: 'h-11 px-5 text-[15px]' },
   variant: {
-    primary: 'bg-btn text-white hover:bg-btn-hover shadow-sm hover:shadow-[0_6px_16px_-6px_rgb(31_122_64/0.55)]',
-    secondary: 'bg-surface text-ink border border-line-strong hover:bg-canvas active:bg-line/60',
+    primary: 'bg-gradient-to-b from-brand-500 to-btn text-white hover:from-brand-600 hover:to-btn-hover shadow-xs hover:shadow-[0_8px_20px_-6px_rgb(16_185_129/0.55)]',
+    secondary: 'bg-surface text-ink border border-line-strong/90 shadow-2xs hover:bg-canvas active:bg-line/60',
     ghost: 'text-ink-2 hover:bg-canvas hover:text-ink',
-    danger: 'bg-red-600 text-white hover:bg-red-700 shadow-sm',
+    danger: 'bg-gradient-to-b from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 shadow-xs',
     'danger-outline': 'bg-surface text-red-700 border border-red-200 hover:bg-red-50',
     link: 'text-brand-700 hover:text-brand-800 hover:underline px-0 h-auto',
   },
@@ -40,19 +40,19 @@ export const IconButton = forwardRef(function IconButton({ icon: Icon, label, si
 });
 
 const TONE = {
-  neutral: 'bg-slate-100 text-slate-700 ring-slate-200',
-  info: 'bg-sky-50 text-sky-800 ring-sky-200',
-  success: 'bg-brand-50 text-brand-800 ring-brand-200',
-  warning: 'bg-amber-50 text-amber-800 ring-amber-200',
-  danger: 'bg-red-50 text-red-700 ring-red-200',
-  brand: 'bg-emerald-50 text-emerald-800 ring-emerald-200',
-  purple: 'bg-violet-50 text-violet-800 ring-violet-200',
+  neutral: 'bg-slate-100 text-slate-700 ring-slate-200/80',
+  info: 'bg-sky-50 text-sky-800 ring-sky-200/80',
+  success: 'bg-brand-50 text-brand-800 ring-brand-200/80',
+  warning: 'bg-amber-50 text-amber-800 ring-amber-200/80',
+  danger: 'bg-red-50 text-red-700 ring-red-200/80',
+  brand: 'bg-emerald-50 text-emerald-800 ring-emerald-200/80',
+  purple: 'bg-violet-50 text-violet-800 ring-violet-200/80',
 };
 const DOT = { neutral: 'bg-slate-400', info: 'bg-sky-500', success: 'bg-brand-500', warning: 'bg-amber-500', danger: 'bg-red-500', brand: 'bg-emerald-500', purple: 'bg-violet-500' };
 
 export function Badge({ tone = 'neutral', children, dot = true, className }) {
   return (
-    <span className={clsx('inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs font-medium ring-1 ring-inset whitespace-nowrap', TONE[tone], className)}>
+    <span className={clsx('inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset whitespace-nowrap', TONE[tone], className)}>
       {dot && <span className={clsx('size-1.5 rounded-full', DOT[tone])} aria-hidden />}
       {children}
     </span>
@@ -74,7 +74,14 @@ export function CardHeader({ title, description, actions, className, icon: Icon 
   return (
     <div className={clsx('flex flex-wrap items-start justify-between gap-3 px-4 pt-4 pb-3 sm:px-5', className)}>
       <div className="min-w-0">
-        <h2 className="flex items-center gap-2 text-[15px] font-semibold text-ink">{Icon && <Icon className="size-4 text-ink-3" aria-hidden />}{title}</h2>
+        <h2 className="flex items-center gap-2.5 text-[15px] font-bold tracking-tight text-ink">
+          {Icon && (
+            <span className="inline-flex size-7 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 ring-1 ring-inset ring-brand-200/70">
+              <Icon className="size-4" aria-hidden />
+            </span>
+          )}
+          {title}
+        </h2>
         {description && <p className="mt-0.5 text-[13px] text-ink-3">{description}</p>}
       </div>
       {actions && <div className="flex flex-wrap items-center gap-2">{actions}</div>}
@@ -86,12 +93,12 @@ export function Spinner({ className, label = 'Đang tải' }) {
   return <Loader2 className={clsx('size-5 animate-spin text-brand-600', className)} aria-label={label} role="status" />;
 }
 export function Skeleton({ className }) {
-  return <div className={clsx('skeleton-shimmer rounded-md', className)} aria-hidden />;
+  return <div className={clsx('skeleton-shimmer rounded-lg', className)} aria-hidden />;
 }
 
 export function Avatar({ name, size = 'md', className }) {
   const s = size === 'sm' ? 'size-7 text-[11px]' : size === 'lg' ? 'size-12 text-base' : 'size-9 text-xs';
-  return <span className={clsx('inline-flex shrink-0 items-center justify-center rounded-full bg-brand-100 font-semibold text-brand-800', s, className)} aria-hidden>{initials(name)}</span>;
+  return <span className={clsx('inline-flex shrink-0 items-center justify-center rounded-full bg-brand-100 font-bold text-brand-800 ring-1 ring-inset ring-brand-200/60', s, className)} aria-hidden>{initials(name)}</span>;
 }
 
 const ALERT = {
@@ -121,7 +128,7 @@ export function KeyValue({ items, className, cols = 2 }) {
       {items.filter(Boolean).map(([k, val]) => (
         <div key={k} className="min-w-0">
           <dt className="text-xs font-medium text-ink-3">{k}</dt>
-          <dd className="mt-0.5 text-sm text-ink break-words">{val ?? '—'}</dd>
+          <dd className="mt-0.5 text-sm font-medium text-ink break-words">{val ?? '—'}</dd>
         </div>
       ))}
     </dl>
@@ -141,8 +148,8 @@ export function ConflictList({ error }) {
 export function ProgressBar({ value, max, className, tone = 'brand' }) {
   const pct = max ? Math.min(100, Math.round((value / max) * 100)) : 0;
   return (
-    <div className={clsx('h-1.5 w-full overflow-hidden rounded-full bg-line/80', className)} role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
-      <div className={clsx('h-full origin-left rounded-full', tone === 'warning' ? 'bg-amber-500' : tone === 'danger' ? 'bg-red-500' : 'bg-brand-500')}
+    <div className={clsx('h-2 w-full overflow-hidden rounded-full bg-line/80', className)} role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
+      <div className={clsx('h-full origin-left rounded-full', tone === 'warning' ? 'bg-amber-500' : tone === 'danger' ? 'bg-red-500' : 'bg-gradient-to-r from-brand-500 to-brand-400')}
         style={{ width: `${pct}%`, animation: 'bar-grow 500ms var(--ease-out-soft) both' }} />
     </div>
   );
